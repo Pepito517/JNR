@@ -28,14 +28,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Changed 'npm ci' to 'npm install' to prevent failure if package-lock.json is not committed
         run: npm install
 
       - name: Build
         run: npm run build
-        env:
-          # Inyecta la clave secreta desde GitHub Secrets durante la construcción
-          API_KEY: ${{ secrets.API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
