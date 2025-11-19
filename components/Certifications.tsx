@@ -31,30 +31,30 @@ const LOGOS = [
   }
 ];
 
-// Duplicamos los logos varias veces para asegurar que cubran pantallas muy anchas (4k, ultrawide)
-// y permitan el efecto de loop infinito suave.
-const REPEATED_LOGOS = [...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS];
+// Duplicamos los logos varias veces para asegurar que cubran pantallas muy anchas y permitan el loop.
+const REPEATED_LOGOS = [...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS, ...LOGOS];
 
 export const Certifications: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const requestRef = useRef<number>(0);
   const positionRef = useRef<number>(0);
-  const speedRef = useRef<number>(0.5); // Velocidad automática
+  const speedRef = useRef<number>(0.5); // Velocidad base
 
-  // Bucle de animación para el scroll infinito automático
+  // Bucle de animación para el scroll infinito
   const animate = useCallback(() => {
     if (!containerRef.current) return;
     
-    // Si no estamos arrastrando, movemos la posición automáticamente
-    if (!isDragging) {
+    // Solo movemos automáticamente si no se está arrastrando Y no se está haciendo hover
+    if (!isDragging && !isHovering) {
       positionRef.current += speedRef.current;
     }
 
     const container = containerRef.current;
-    const maxScroll = container.scrollWidth / 2; // Asumimos que la mitad es el punto de reinicio por la duplicación
+    const maxScroll = container.scrollWidth / 2; // Punto de reinicio
 
     // Lógica de reinicio infinito (Loop)
     if (positionRef.current >= maxScroll) {
@@ -65,23 +65,27 @@ export const Certifications: React.FC = () => {
 
     container.scrollLeft = positionRef.current;
     requestRef.current = requestAnimationFrame(animate);
-  }, [isDragging]);
+  }, [isDragging, isHovering]);
 
   useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
   }, [animate]);
 
-  // Eventos para Arrastrar (Mouse)
+  // --- Eventos de Ratón (Escritorio) ---
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
     setScrollLeft(positionRef.current);
-    // Cursor style handled by CSS class
   };
 
   const handleMouseLeave = () => {
     setIsDragging(false);
+    setIsHovering(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
   };
 
   const handleMouseUp = () => {
@@ -92,11 +96,11 @@ export const Certifications: React.FC = () => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - (containerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Velocidad del arrastre manual
+    const walk = (x - startX) * 2; // Multiplicador para sensibilidad
     positionRef.current = scrollLeft - walk;
   };
 
-  // Eventos para Táctil (Móvil)
+  // --- Eventos Táctiles (Móvil) ---
   const handleTouchStart = (e: React.TouchEvent) => {
     setIsDragging(true);
     setStartX(e.touches[0].pageX - (containerRef.current?.offsetLeft || 0));
@@ -115,7 +119,7 @@ export const Certifications: React.FC = () => {
   };
 
   return (
-    <section className="py-12 bg-slate-50 border-y border-slate-200 overflow-hidden w-full">
+    <section className="py-12 bg-slate-50 border-y border-slate-200 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
         <h3 className="text-xs font-bold tracking-widest text-slate-400 uppercase">
           Certificaciones y tecnologías
@@ -128,18 +132,21 @@ export const Certifications: React.FC = () => {
         ref={containerRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onTouchMove={handleTouchMove}
       >
+        {/* Contenedor interno con los logos */}
         <div className="inline-flex items-center gap-16 px-4 min-w-max py-4">
           {REPEATED_LOGOS.map((logo, index) => (
             <div 
               key={`${logo.name}-${index}`} 
-              className="flex-shrink-0 group transition-transform duration-300 hover:scale-110"
+              className="flex-shrink-0 group transition-transform duration-300 hover:scale-110 relative z-10"
             >
+              {/* Importante: pointer-events-none en la imagen para que no interfiera con el drag del div padre */}
               <img 
                 src={logo.url} 
                 alt={logo.name} 
