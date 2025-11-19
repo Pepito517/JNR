@@ -10,6 +10,5 @@ export const UNIVERSAL_DATA = {
   }
 };
 
-// Año de inicio para el cálculo automático de experiencia (Basado en "10+ años")
+// Año de inicio para el cálculo automático de experiencia
 export const CAREER_START_YEAR = 2021;
-export const PROJECTS_PER_YEAR_ESTIMATE = 3;
