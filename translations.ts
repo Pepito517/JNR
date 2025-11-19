@@ -23,10 +23,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       p1: "Consultor d'estratègia tecnològica orientat a resultats amb més de 10 anys d'experiència especialitzant-me en transformació digital, intel·ligència artificial i ciberseguretat. Compto amb un historial provat alineant iniciatives tecnològiques complexes amb objectius de negoci crítics per millorar dràsticament l'eficiència operativa i accelerar el creixement dels ingressos.",
       p2: "Com a consultor independent, combino visió estratègica amb un profund coneixement tècnic. El meu enfocament es centra en desmitificar la tecnologia per a l'alta direcció, permetent decisions informades que impulsen el creixement.",
       p3: "He treballat amb startups en fase de creixement i grans corporacions, adaptant metodologies àgils i arquitectures modernes a les necessitats específiques de cada negoci.",
-      years: "10+",
       yearsLabel: "Anys d'experiència",
-      projects: "25+",
-      projectsLabel: "Projectes liderats"
+      projectsLabel: "Projectes executats"
     },
     services: {
       title: "Àrees d'especialització",
@@ -91,7 +89,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           results: [
             "Reducció del 95% en temps de resposta de suport (Nivell 1).",
             "Disminució del 60% en pèrdues per frau transaccional.",
-            "Creixement d'ingressos del 15% en recuperar transaccions legítimes."
+            "Creixement d'ingressos del 15% en recuperar transacciones legítimes."
           ],
           cta: "Sol·licitar detalls complets"
         }
@@ -152,7 +150,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
             "2024~2025: ASSEGURADORA NACIONAL - Oficina de Transformació Cloud: Acompanyament dels J2C de les distintes entitats internacionals de la companyia amb l'objectiu d'estandarditzar el procés d'adopció del núvol, analitzar el parc d'aplicacions actual, definir arquetips, acceleradors i trackers de migració, planificar les migracions a alt nivell, definir el nou model operatiu i crear una comunitat cloud a l'empresa.",
             "2024: SECTOR PÚBLIC - Pla de Modernització de Sistemes: Avaluació del mapa d'aplicacions en base a criteris tècnics i revisió d'arquitectura tècnica per al posterior disseny del mapa d'aplicacions futur, identificació d'iniciatives i programes addicionals incloent automatització i actius d'intel·ligència artificial, culminant en l'elaboració del pla per als següents 3 anys amb un conjunt de programes e iniciatives que donin resposta a les necessitats tecnològiques avaluades.",
             "2024: COMPANYIA DE MARKETPLACES DIGITALS - Anàlisi per Insourcing de EPSS: Anàlisi en profunditat de les dades, els processos i la tecnologia relacionats amb el servei de EPSS proporcionat per proveïdor extern per comprendre el servei actual i originar l'estratègia futura d'internalització de l'esmentat servei.",
-            "2022~2024: ENTITAT BANCÀRIA NACIONAL - Implantació d'eina de PPM: Definició i operativització de processos i metodologies de treball de les distintes organitzacions del client a través d'implantacions a mida en eina de PPM per a funcionalitats com: gestió de projectes i demanda, assignació de recursos, gestió de pressupost, inclusió de noves organitzacions, etc."
+            "2022~2024: ENTITAT BANCÀRIA NACIONAL - Implantació d'eina de PPM: Definició i operativització de processos i metodologies de treball de les distintes organitzacions del client a través de implantacions a mida en eina de PPM per a funcionalitats com: gestió de projectes i demanda, assignació de recursos, gestió de pressupost, inclusió de noves organitzacions, etc."
           ]
         },
         {
@@ -201,10 +199,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       p1: "Consultor de estrategia tecnológica orientado a resultados con más de 10 años de experiencia especializándome en transformación digital, inteligencia artificial y ciberseguridad. Cuento con un historial probado alineando iniciativas tecnológicas complejas con objetivos de negocio críticos para mejorar drásticamente la eficiencia operativa y acelerar el crecimiento de los ingresos.",
       p2: "Como consultor independiente, combino visión estratégica con un profundo conocimiento técnico. Mi enfoque se centra en desmitificar la tecnología para la alta dirección, permitiendo decisiones informadas que impulsan el crecimiento.",
       p3: "He trabajado con startups en fase de crecimiento y grandes corporaciones, adaptando metodologías ágiles y arquitecturas modernas a las necesidades específicas de cada negocio.",
-      years: "10+",
       yearsLabel: "Años de experiencia",
-      projects: "25+",
-      projectsLabel: "Proyectos liderados"
+      projectsLabel: "Proyectos ejecutados"
     },
     services: {
       title: "Áreas de especialización",
@@ -314,7 +310,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           description: "Consultoría estratégica enfocada en evolución de arquitectura, análisis de sistemas críticos y definición de marcos de arquitectura empresarial.",
           logoUrl: UNIVERSAL_DATA.logos.ntt,
           achievements: [
-            "2025: SECTOR PÚBLICO (TRANSPORTE) - Evolución de arquitectura y sistemas: Análisis de las capacidades actuales a nivel de aplicaciones y tecnología como parte de un importante programa de Transformación Digital, con el objetivo de definir la arquitectura objetivo y formular un plan estratégico de transición, detallando iniciativas concretas para migrar hacia una plataforma tecnológica modernizada.",
+            "2025: SECTOR PÚBLICO (TRANSPORTE) - Evolución de arquitectura y sistemas: Análisis de las capacidades actuales a nivel de aplicaciones y tecnología como parte de un importante programa de Transformación Digital, con el objetivo de definir la arquitectura objetivo y formular un plan estratégico de transición, detallando iniciativas concretes para migrar hacia una plataforma tecnológica modernizada.",
             "2025: SECTOR PÚBLICO - Análisis de disposición para la toma de un sistema: Como parte de una Oficina Técnica, alineación estratégica de múltiples líneas de trabajo (Arquitectura de Solución, Interoperabilidad e Integración, DevOps, Seguridad, etc.) para llevar a cabo una evaluación de preparación para la asunción de un sistema crítico. El proyecto incluyó un análisis de riesgos sobre los servicios del proveedor actual, que concluyó con la creación d'un plan de mitigación integral, iniciativas de remediación y una hoja de ruta detallada para la implementación.",
             "2025: COMPAÑÍA DE SEGUROS - Visión y análisis de arquitectura: Evaluación de las capacidades actuales de la función de arquitectura empresarial para analizar su grado de madurez y generación de principios directores para el futuro de la arquitectura de la compañía, acompañada de la descripción de iniciativas a ejecutar para alcanzar los objetivos propuestos en términos de definición del marco de arquitectura y evolución tecnológica."
           ]
@@ -328,7 +324,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: UNIVERSAL_DATA.logos.accenture,
           achievements: [
             "2024~2025: ASEGURADORA NACIONAL - Oficina de Transformación Cloud: Acompañamiento de los J2C de las distintas entidades internacionales de la compañía con el objetivo de estandarizar el proceso de adopción de la nube, analizar el parque de aplicaciones actual, definir arquetipos, aceleradores y trackers de migración, planificar las migraciones a alto nivel, definir el nuevo modelo operativo y crear una comunidad cloud en la empresa.",
-            "2024: SECTOR PÚBLICO - Plan de Modernización de Sistemas: Evaluación del mapa de aplicaciones en base a criterios técnicos y revisión de arquitectura técnica para el posterior diseño del mapa de aplicaciones futuro, identificación de iniciativas y programas adicionales incluyendo automatización y activos de inteligencia artificial, culminando en la elaboración del plan para los siguientes 3 años con un conjunto de programas e iniciativas que den respuesta a las necesidades tecnológicas evaluadas.",
+            "2024: SECTOR PÚBLICO - Plan de Modernización de Sistemas: Evaluación del mapa de aplicaciones en base a criterios técnicos y revisión de arquitectura técnica para el posterior diseño del mapa de aplicaciones futuro, identificación de iniciativas y programas adicionales incluyendo automatización y activos de inteligencia artificial, culminant en la elaboración del plan para los siguientes 3 años con un conjunto de programas e iniciativas que den respuesta a las necesidades tecnológicas evaluadas.",
             "2024: COMPAÑÍA DE MARKETPLACES DIGITALES - Análisis para Insourcing de EPSS: Análisis en profundidad de los datos, los procesos y la tecnología relacionados con el servicio de EPSS proporcionado por proveedor externo para comprender el servicio actual y originar la estrategia futura de internalización del servicio.",
             "2022~2024: ENTIDAD BANCARIA NACIONAL - Implantación de herramienta de PPM: Definición y operativización de procesos y metodologías de trabajo de las distintas organizaciones del cliente a través de implantaciones a medida en herramienta de PPM para funcionalidades como: gestión de proyectos y demanda, asignación de recursos, gestión de presupuesto, inclusión de nuevas organizaciones, etc."
           ]
@@ -379,10 +375,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       p1: "Results-oriented Technology Strategy Consultant with over 10 years of experience specializing in digital transformation, artificial intelligence, and cybersecurity. I have a proven track record of aligning complex technology initiatives with critical business goals to dramatically improve operational efficiency and accelerate revenue growth.",
       p2: "As an independent consultant, I combine strategic vision with deep technical knowledge. My focus is on demystifying technology for senior management, enabling informed decisions that drive growth.",
       p3: "I have worked with growing startups and large corporations, adapting agile methodologies and modern architectures to the specific needs of each business.",
-      years: "10+",
       yearsLabel: "Years of Experience",
-      projects: "25+",
-      projectsLabel: "Projects Led"
+      projectsLabel: "Projects Executed"
     },
     services: {
       title: "Areas of Expertise",
