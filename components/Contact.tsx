@@ -48,9 +48,12 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="bg-slate-800 p-6 rounded-2xl border border-slate-700 h-fit">
-             <h3 className="text-lg font-semibold mb-3">¿Preguntas rápidas?</h3>
+             <h3 className="text-lg font-semibold mb-3">Disponibilidad</h3>
+             <p className="text-slate-400 text-sm leading-relaxed mb-4">
+               Actualmente estoy aceptando nuevos proyectos de consultoría estratégica y transformación digital.
+             </p>
              <p className="text-slate-400 text-sm leading-relaxed">
-               Usa el <strong>asistente virtual</strong> (icono de chat abajo a la derecha) para obtener respuestas inmediatas sobre mi experiencia y disponibilidad, potenciado por inteligencia artificial.
+               No dudes en contactarme directamente por correo electrónico o LinkedIn para agendar una breve conversación introductoria.
              </p>
           </div>
         </div>
