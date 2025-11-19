@@ -1,9 +1,14 @@
 import React from 'react';
-import { UNIVERSAL_DATA } from '../constants';
+import { UNIVERSAL_DATA, CAREER_START_YEAR, PROJECTS_PER_YEAR_ESTIMATE } from '../constants';
 import { useLanguage } from '../context/LanguageContext';
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
+  
+  // Cálculos automáticos
+  const currentYear = new Date().getFullYear();
+  const yearsExp = currentYear - CAREER_START_YEAR + 1;
+  const estimatedProjects = Math.floor(yearsExp * PROJECTS_PER_YEAR_ESTIMATE);
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -39,11 +44,11 @@ export const About: React.FC = () => {
 
             <div className="mt-8 grid grid-cols-2 gap-6">
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-colors">
-                <h4 className="font-bold text-3xl text-brand-600 mb-1">{t.about.years}</h4>
+                <h4 className="font-bold text-3xl text-brand-600 mb-1">{yearsExp}+</h4>
                 <p className="text-sm text-slate-500">{t.about.yearsLabel}</p>
               </div>
               <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 hover:border-brand-200 transition-colors">
-                <h4 className="font-bold text-3xl text-brand-600 mb-1">{t.about.projects}</h4>
+                <h4 className="font-bold text-3xl text-brand-600 mb-1">{estimatedProjects}+</h4>
                 <p className="text-sm text-slate-500">{t.about.projectsLabel}</p>
               </div>
             </div>
