@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { EducationIcon, ArrowRightIcon } from './Icons';
+import { EducationIcon, ChevronDownIcon, ExternalLinkIcon, BriefcaseIcon } from './Icons';
 
 export const Education: React.FC = () => {
   const { t } = useLanguage();
+  const [expandedVendorId, setExpandedVendorId] = useState<string | null>(null);
+
+  const toggleVendor = (id: string) => {
+    setExpandedVendorId(expandedVendorId === id ? null : id);
+  };
 
   return (
     <section id="education" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-brand-600 font-semibold tracking-wider uppercase text-sm">{t.education.badge}</span>
+          <span className="text-brand-600 font-semibold tracking-wider uppercase text-sm">
+            {t.education.badge}
+          </span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-4">
             {t.education.title}
           </h2>
@@ -18,44 +27,172 @@ export const Education: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
-          {t.education.items.map((item) => (
-            <div 
-              key={item.id} 
-              className="flex flex-col lg:flex-row gap-8 bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
-                <div className="flex items-center gap-2 text-brand-600 mb-4">
-                  <EducationIcon className="w-5 h-5" />
-                  <span className="font-semibold text-sm uppercase tracking-wide">{t.education.badge}</span>
-                </div>
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-brand-700 font-bold text-base mb-4 uppercase tracking-wide">
-                  {item.institution}
-                </p>
-                <p className="text-slate-600 leading-relaxed text-lg">
-                  {item.description}
-                </p>
-              </div>
+        {/* Academic Section */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-px bg-slate-200 flex-1"></div>
+            <h3 className="text-xl font-bold text-slate-800 uppercase tracking-wide">
+              {t.education.academicTitle}
+            </h3>
+            <div className="h-px bg-slate-200 flex-1"></div>
+          </div>
 
-              <div className="lg:w-2/5 bg-slate-900 p-8 lg:p-12 text-white flex flex-col justify-center">
-                <h4 className="font-serif text-xl font-bold mb-6 border-b border-slate-700 pb-4 text-brand-200">
-                  {item.id === 'ed1' ? 'Certificacions' : 'Títols'}
-                </h4>
-                <ul className="space-y-4">
-                  {item.items.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-3 group">
-                      <div className="mt-1.5 w-2 h-2 rounded-full bg-brand-400 shrink-0 shadow-[0_0_10px_rgba(56,189,248,0.5)] group-hover:bg-white transition-colors"></div>
-                      <span className="text-slate-300 font-light leading-relaxed group-hover:text-white transition-colors">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {t.education.academic.map((item) => (
+              <div key={item.id} className="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-white p-2 border border-slate-100 flex items-center justify-center shrink-0">
+                    {item.logoUrl ? (
+                       <img 
+                          src={item.logoUrl} 
+                          alt={item.institution} 
+                          className="w-full h-full object-contain"
+                        />
+                    ) : (
+                       <EducationIcon className="w-6 h-6 text-brand-600" />
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg text-slate-900 leading-tight mb-1">
+                      {item.degree}
+                    </h4>
+                    <p className="text-brand-700 font-medium text-sm mb-2">
+                      {item.institution}
+                    </p>
+                    <div className="flex flex-col gap-2">
+                        <span className="inline-block px-2 py-1 bg-slate-200 text-slate-600 text-xs font-bold rounded w-fit">
+                          {item.year}
+                        </span>
+                        {item.description && (
+                            <p className="text-sm text-slate-500 italic border-l-2 border-brand-200 pl-2">
+                                {item.description}
+                            </p>
+                        )}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        {/* Professional Certifications Section */}
+        <div>
+           <div className="flex items-center gap-4 mb-8">
+            <div className="h-px bg-slate-200 flex-1"></div>
+            <h3 className="text-xl font-bold text-slate-800 uppercase tracking-wide">
+              {t.education.professionalTitle}
+            </h3>
+            <div className="h-px bg-slate-200 flex-1"></div>
+          </div>
+
+          <div className="space-y-4 max-w-4xl mx-auto">
+            {t.education.professional.map((vendor) => {
+              const isExpanded = expandedVendorId === vendor.id;
+              
+              return (
+                <div 
+                  key={vendor.id}
+                  className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
+                    isExpanded 
+                      ? 'border-brand-500 shadow-lg ring-1 ring-brand-200' 
+                      : 'border-slate-200 hover:border-brand-300 hover:shadow-md'
+                  }`}
+                >
+                  {/* Vendor Header (Clickable) */}
+                  <div 
+                    onClick={() => toggleVendor(vendor.id)}
+                    className="p-6 cursor-pointer flex items-center justify-between gap-4"
+                  >
+                    <div className="flex items-center gap-4 sm:gap-6 flex-1">
+                      {/* Vendor Logo */}
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-white rounded-lg p-2 border border-slate-100 flex items-center justify-center">
+                        <img 
+                          src={vendor.logoUrl} 
+                          alt={vendor.name} 
+                          className="max-w-full max-h-full object-contain"
+                        />
+                      </div>
+                      
+                      {/* Vendor Info */}
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-bold text-slate-900">
+                          {vendor.name}
+                        </h4>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {vendor.tags.map((tag, idx) => (
+                            <span 
+                              key={idx}
+                              className="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Expand Icon */}
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                      isExpanded ? 'bg-brand-100 text-brand-600 rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-brand-50'
+                    }`}>
+                      <ChevronDownIcon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  {/* Certifications Grid (Expandable) */}
+                  <div 
+                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out bg-slate-50/50 ${
+                      isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="p-6 pt-0 border-t border-slate-100">
+                        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {vendor.certifications.map((cert, idx) => (
+                            <div 
+                              key={idx}
+                              className="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-4 hover:border-brand-200 transition-colors"
+                            >
+                              {/* Certification Badge */}
+                              <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-white border border-slate-100">
+                                <img 
+                                  src={cert.image} 
+                                  alt={cert.name} 
+                                  className="w-full h-full object-contain p-1"
+                                />
+                              </div>
+                              
+                              <div className="flex-1 min-w-0">
+                                <h5 className="font-bold text-slate-900 text-sm leading-tight mb-1 truncate whitespace-normal">
+                                  {cert.name}
+                                </h5>
+                                <p className="text-xs text-slate-500 mb-3">
+                                  {cert.date}
+                                </p>
+                                <a 
+                                  href={cert.credentialUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 hover:underline"
+                                >
+                                  {t.education.viewCredential}
+                                  <ExternalLinkIcon className="w-3 h-3" />
+                                </a>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
       </div>
     </section>
   );

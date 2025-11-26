@@ -19,7 +19,8 @@ import {
   Quote,
   Briefcase,
   GraduationCap,
-  BarChart3
+  BarChart3,
+  ExternalLink
 } from 'lucide-react';
 
 export const StrategyIcon = ({ className }: { className?: string }) => <Brain className={className} />;
@@ -43,6 +44,7 @@ export const QuoteIcon = ({ className }: { className?: string }) => <Quote class
 export const EducationIcon = ({ className }: { className?: string }) => <GraduationCap className={className} />;
 export const BriefcaseIcon = ({ className }: { className?: string }) => <Briefcase className={className} />;
 export const ChartIcon = ({ className }: { className?: string }) => <BarChart3 className={className} />;
+export const ExternalLinkIcon = ({ className }: { className?: string }) => <ExternalLink className={className} />;
 
 export const getServiceIcon = (iconName: string, className?: string) => {
   switch (iconName) {

@@ -1,6 +1,43 @@
 import { TranslationStructure } from './types';
 import { UNIVERSAL_DATA } from './constants';
 
+const VENDOR_LOGOS = {
+  togaf: "https://image.makewebeasy.net/makeweb/m_750x0/VC8hKuwUh/PartnerLogos/togaf.png",
+  safe: "https://scrumcraft.com/wp-content/uploads/2024/01/SAI_temp-logo_dteal.png",
+  aws: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+  google: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg",
+  azure: "https://www.bizstream.com/wp-content/uploads/2022/04/microsoft-azure-logo.png",
+  ardoq: "https://images.credly.com/images/074823c7-1b50-453c-ad9e-d254b1d89237/large_blob.png",
+  leanix: "https://confare.at/wp-content/uploads/Logo_LeanIX-RGB__horizontal_duotone_flat.png", // SAP LeanIX
+  accenture: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
+  servicenow: "https://upload.wikimedia.org/wikipedia/commons/1/10/ServiceNow_logo.svg",
+  isdi: "https://isdi.education/app/uploads/2021/06/ISDI_LOGO_BLACK.png",
+  ub: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Logotip_UB.svg/256px-Logotip_UB.svg.png",
+  cambridge: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/University_of_Cambridge_logo.svg/256px-University_of_Cambridge_logo.svg.png"
+};
+
+const BADGES = {
+  togaf9: "https://images.credly.com/size/340x340/images/9623e061-6874-4b6c-829d-ee18c83a17e0/TOGAF_9_Certified.png",
+  togafF: "https://images.credly.com/size/340x340/images/c29c3686-259e-4a6c-94cc-e892d774f767/TOGAF_Enterprise_Architecture_Foundation.png",
+  togafP: "https://images.credly.com/size/340x340/images/42c3664e-0925-467a-9777-62624dd192c7/TOGAF_Enterprise_Architecture_Practitioner.png",
+  safe6: "https://images.credly.com/size/340x340/images/2d84e428-9078-49b6-a804-1371568b76e1/SAFe-Agilist-6_281_29.png",
+  awsPrac: "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
+  awsAI: "https://images.credly.com/size/340x340/images/c0b8529d-4054-469b-b054-080c3e9818b2/image.png", // Generic/Projected AI badge
+  awsPartnerTech: "https://images.credly.com/size/340x340/images/e562886f-570a-4284-934c-6825c8939c06/image.png",
+  awsPartnerSales: "https://images.credly.com/size/340x340/images/2f7c0068-d621-4d1a-8c29-37303c74900c/image.png",
+  googleLead: "https://images.credly.com/size/340x340/images/22375865-d01c-43f9-8692-a9b0c61839e8/image.png",
+  azureFund: "https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png",
+  azureAI: "https://images.credly.com/size/340x340/images/336eeb74-9b2d-458b-965d-255959600f91/image.png",
+  azureData: "https://images.credly.com/size/340x340/images/05680195-b98a-4462-811c-2c93806f194c/image.png",
+  powerFund: "https://images.credly.com/size/340x340/images/4a613d9c-1546-417d-815d-007f3542289c/image.png",
+  ardoqFund: "https://images.credly.com/size/340x340/images/074823c7-1b50-453c-ad9e-d254b1d89237/large_blob.png",
+  leanix1: "https://images.credly.com/size/340x340/images/0e152912-32a7-4712-a89e-5e265c690226/image.png",
+  leanix2: "https://images.credly.com/size/340x340/images/e6231011-0941-477c-a44d-d876878c772e/image.png",
+  accentureLeader: "https://images.credly.com/size/340x340/images/30745585-612b-450f-a99f-798b0467776b/People_Leadership_Credential_-_Bronze.png", // Generic Accenture Leadership badge
+  servicenow: "https://images.credly.com/size/340x340/images/26b9623e-1b84-482a-a924-d2e82502808c/image.png",
+  cambridge: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/University_of_Cambridge_logo.svg/256px-University_of_Cambridge_logo.svg.png"
+};
+
 export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
   ca: {
     nav: {
@@ -21,7 +58,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
     about: {
       title: "Sobre mi",
       p1: "Consultor d'estratègia tecnològica orientat a resultats amb més de 10 anys d'experiència especialitzant-me en transformació digital, intel·ligència artificial i ciberseguretat. Compto amb un historial provat alineant iniciatives tecnològiques complexes amb objectius de negoci crítics per millorar dràsticament l'eficiència operativa i accelerar el creixement dels ingressos.",
-      p2: "Com a consultor independent, combino visió estratègica amb un profund coneixement tècnic. El meu enfocament es centra en desmitificar la tecnologia per a l'alta direcció, permetent decisions informades que impulsen el creixement.",
+      p2: "Com a consultor independent, combino visió estratègica amb un profund coneixement tècnic. El meu enfocament es centra en desmitificar la tecnologia per a l'alta direcció, permetent decisions informades que impulsan el creixement.",
       p3: "He treballat amb startups en fase de creixement i grans corporacions, adaptant metodologies àgils i arquitectures modernes a les necessitats específiques de cada negoci.",
       yearsLabel: "Anys d'experiència",
       projectsLabel: "Projectes executats"
@@ -58,31 +95,137 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
     },
     education: {
       badge: "Formació continuada",
-      title: "Formació i certificacions",
-      subtitle: "El compromís amb l'excel·lència tècnica requereix un aprenentatge constant i validació pels estàndards de la indústria.",
-      items: [
+      title: "Formació i Certificacions",
+      subtitle: "Compromís constant amb l'aprenentatge i la validació tècnica a través dels estàndards de la indústria.",
+      academicTitle: "Formació Académica",
+      professionalTitle: "Certificacions Professionals",
+      viewCredential: "Veure credencial",
+      academic: [
         {
-          id: "ed1",
-          title: "Certificacions professionals",
-          institution: "Estàndards de la indústria",
-          description: "Acreditacions tècniques i metodològiques que validen el coneixement en arquitectura, agilitat i plataformes cloud.",
-          items: [
-            "The Open Group Certified: TOGAF 9",
-            "Scaled Agile: SAFe 6 Agilist",
-            "AWS Certified Cloud Practitioner",
-            "Google Cloud Digital Leader",
-            "Microsoft Certified: Azure Fundamentals",
-            "Ardoq & LeanIX Certified"
+          id: "ac1",
+          degree: "Màster en Transformació Digital",
+          institution: "ISDI",
+          year: "Set. 2022 - Nov. 2022",
+          logoUrl: VENDOR_LOGOS.isdi,
+          description: "Especialització en Cloud."
+        },
+        {
+          id: "ac2",
+          degree: "Grau en Enginyeria Informàtica",
+          institution: "Universitat de Barcelona",
+          year: "Set. 2015 - Juny 2022",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "Minor en Informàtica."
+        },
+        {
+          id: "ac3",
+          degree: "Grau en Matemàtiques",
+          institution: "Universitat de Barcelona",
+          year: "2015 - 2017",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "Dos primers cursos complets."
+        }
+      ],
+      professional: [
+        {
+          id: "v_aws",
+          name: "Amazon Web Services (AWS)",
+          logoUrl: VENDOR_LOGOS.aws,
+          tags: ["Cloud", "AI", "Partner"],
+          certifications: [
+            { name: "AWS Certified AI Practitioner", image: BADGES.awsAI, date: "Maig 2025", credentialUrl: "#" },
+            { name: "AWS Certified Cloud Practitioner", image: BADGES.awsPrac, date: "Des. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Accreditation (Technical)", image: BADGES.awsPartnerTech, date: "Nov. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Sales Accreditation (Business)", image: BADGES.awsPartnerSales, date: "Nov. 2022", credentialUrl: "#" }
           ]
         },
         {
-          id: "ed2",
-          title: "Formació acadèmica",
-          institution: "Universitat i Postgrau",
-          description: "Base acadèmica sòlida en enginyeria i gestió tecnològica.",
-          items: [
-            "Grau en Enginyeria Informàtica",
-            "Màster en Gestió i Direcció de Sistemes TI"
+          id: "v_ms",
+          name: "Microsoft",
+          logoUrl: VENDOR_LOGOS.azure,
+          tags: ["Azure", "Data", "AI", "Power Platform"],
+          certifications: [
+            { name: "Microsoft Certified: Azure AI Fundamentals", image: BADGES.azureAI, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Data Fundamentals", image: BADGES.azureData, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Fundamentals", image: BADGES.azureFund, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Power Platform Fundamentals", image: BADGES.powerFund, date: "Maig 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_togaf",
+          name: "The Open Group",
+          logoUrl: VENDOR_LOGOS.togaf,
+          tags: ["Enterprise Architecture", "Framework"],
+          certifications: [
+            { name: "TOGAF® Enterprise Architecture Practitioner", image: BADGES.togafP, date: "Juny 2025", credentialUrl: "#" },
+            { name: "TOGAF® Enterprise Architecture Foundation", image: BADGES.togafF, date: "Març 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_leanix",
+          name: "SAP LeanIX",
+          logoUrl: VENDOR_LOGOS.leanix,
+          tags: ["EA Tooling", "SaaS Management"],
+          certifications: [
+            { name: "LeanIX Certified Practitioner (Level 2)", image: BADGES.leanix2, date: "Març 2025", credentialUrl: "#" },
+            { name: "LeanIX Certified Practitioner (Level 1)", image: BADGES.leanix1, date: "Feb. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_ardoq",
+          name: "Ardoq",
+          logoUrl: VENDOR_LOGOS.ardoq,
+          tags: ["EA Tooling", "Data Driven"],
+          certifications: [
+            { name: "Ardoq Practitioner", image: BADGES.ardoqFund, date: "Oct. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: VENDOR_LOGOS.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: BADGES.safe6, date: "Abr. 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: VENDOR_LOGOS.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: BADGES.googleLead, date: "Des. 2022", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_acc",
+          name: "Accenture",
+          logoUrl: VENDOR_LOGOS.accenture,
+          tags: ["Leadership", "Management"],
+          certifications: [
+            { name: "People Leadership Credential - Chapter 3: Empower", image: BADGES.accentureLeader, date: "Juny 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: BADGES.accentureLeader, date: "Maig 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: BADGES.accentureLeader, date: "Nov. 2023", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: VENDOR_LOGOS.servicenow,
+          tags: ["ITSM", "Platform"],
+          certifications: [
+            { name: "Micro-Certification - Welcome to ServiceNow", image: BADGES.servicenow, date: "Jul. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_cambridge",
+          name: "University of Cambridge",
+          logoUrl: VENDOR_LOGOS.cambridge,
+          tags: ["Languages", "English"],
+          certifications: [
+            { name: "Certificate in Advanced English (CAE)", image: BADGES.togafF, date: "Oct. 2020", credentialUrl: "#" }, // Using generic badge placeholder if not available, usually handled by using vendor logo
+            { name: "First Certificate in English (FCE)", image: BADGES.togafF, date: "Maig 2012", credentialUrl: "#" }
           ]
         }
       ]
@@ -136,7 +279,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           role: "Technology Strategy & Advisory Analyst",
           company: "Accenture España",
           period: "Set. 2022 - Gen. 2025",
-          description: "Consultoria de transformació cloud, modernització de sistemes i optimització de processos IT per a grans clients.",
+          description: "Consultoria de transformació cloud, modernització de sistemes i optimització de procesos IT per a grans clients.",
           logoUrl: UNIVERSAL_DATA.logos.accenture,
           achievements: [
             "2024~2025: ASSEGURADORA NACIONAL - Oficina de Transformación Cloud: Acompañamiento de los J2C de las distintas entidades internacionales de la compañía con el objetivo de estandarizar el proceso de adopción de la nube, analizar el parque de aplicaciones actual, definir arquetipos, aceleradores y trackers de migración, planificar las migraciones a alto nivel, definir el nuevo modelo operativo y crear una comunidad cloud en la empresa.",
@@ -171,9 +314,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           title: "Modernització de Plataforma Bancària",
           client: "Banc Nacional Top 3",
           challengeTitle: "El Repte",
-          challenge: "Sistemes 'legacy' monolítics que frenaven el time-to-market de nous productes financers.",
+          challenge: "Sistemes 'legacy' monolíticos que frenaban el time-to-market de nuevos productos financieros.",
           approachTitle: "L'Enfocament",
-          approach: "Disseny d'arquitectura orientada a esdeveniments i migració gradual al núvol.",
+          approach: "Disseny de arquitectura orientada a esdeveniments i migració gradual al núvol.",
           resultsTitle: "Resultats",
           results: ["Reducció del 40% en costos d'infraestructura", "Desplegament de features en dies en lloc de mesos"],
           cta: "Veure detalls"
@@ -181,11 +324,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       ]
     },
     contact: {
-      title: "Parlem del teu proper desafiament",
-      subtitle: "Estic sempre interessat en escoltar sobre nous projectes i oportunitats de col·laboració.",
-      availabilityTitle: "Disponibilitat",
-      availabilityText1: "Actualment estic acceptant nous projectes de consultoria estratègica i transformació digital.",
-      availabilityText2: "No dubtis en contactar-me directament per correu electrònic o LinkedIn per agendar una breu conversa introductòria.",
+      title: "Connectem",
+      subtitle: "Sempre obert a parlar sobre tecnologia, estratègia i innovació. No dubtis a contactar per compartir idees o explorar sinergies.",
+      location: "Barcelona, Espanya",
       rights: "Tots els drets reservats."
     }
   },
@@ -246,30 +387,136 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
     education: {
       badge: "Formación continua",
       title: "Formación y certificaciones",
-      subtitle: "El compromiso con la excelencia técnica requiere un aprendizaje constante y validación por los estándares de la industria.",
-      items: [
+      subtitle: "Compromiso constante con el aprendizaje y la validación técnica a través de los estándares de la industria.",
+      academicTitle: "Formación Académica",
+      professionalTitle: "Certificaciones Profesionales",
+      viewCredential: "Ver credencial",
+      academic: [
         {
-          id: "ed1",
-          title: "Certificaciones profesionales",
-          institution: "Estándares de la industria",
-          description: "Acreditaciones técnicas y metodológicas que validan el conocimiento en arquitectura, agilidad y plataformas cloud.",
-          items: [
-            "The Open Group Certified: TOGAF 9",
-            "Scaled Agile: SAFe 6 Agilist",
-            "AWS Certified Cloud Practitioner",
-            "Google Cloud Digital Leader",
-            "Microsoft Certified: Azure Fundamentals",
-            "Ardoq & LeanIX Certified"
+          id: "ac1",
+          degree: "Máster en Transformación Digital",
+          institution: "ISDI",
+          year: "Sept. 2022 - Nov. 2022",
+          logoUrl: VENDOR_LOGOS.isdi,
+          description: "Especialización en Cloud."
+        },
+        {
+          id: "ac2",
+          degree: "Grado en Ingeniería Informática",
+          institution: "Universitat de Barcelona",
+          year: "Sept. 2015 - Jun. 2022",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "Minor en Informática."
+        },
+        {
+          id: "ac3",
+          degree: "Grado en Matemáticas",
+          institution: "Universitat de Barcelona",
+          year: "Sept. 2015 - 2017",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "Dos primeros cursos completos."
+        }
+      ],
+      professional: [
+        {
+          id: "v_aws",
+          name: "Amazon Web Services (AWS)",
+          logoUrl: VENDOR_LOGOS.aws,
+          tags: ["Cloud", "AI", "Partner"],
+          certifications: [
+            { name: "AWS Certified AI Practitioner", image: BADGES.awsAI, date: "Mayo 2025", credentialUrl: "#" },
+            { name: "AWS Certified Cloud Practitioner", image: BADGES.awsPrac, date: "Dic. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Accreditation (Technical)", image: BADGES.awsPartnerTech, date: "Nov. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Sales Accreditation (Business)", image: BADGES.awsPartnerSales, date: "Nov. 2022", credentialUrl: "#" }
           ]
         },
         {
-          id: "ed2",
-          title: "Formación académica",
-          institution: "Universidad y Postgrado",
-          description: "Base académica sólida en ingeniería y gestión tecnológica.",
-          items: [
-            "Grado en Ingeniería Informática",
-            "Máster en Gestión y Dirección de Sistemas TI"
+          id: "v_ms",
+          name: "Microsoft",
+          logoUrl: VENDOR_LOGOS.azure,
+          tags: ["Azure", "Data", "AI", "Power Platform"],
+          certifications: [
+            { name: "Microsoft Certified: Azure AI Fundamentals", image: BADGES.azureAI, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Data Fundamentals", image: BADGES.azureData, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Fundamentals", image: BADGES.azureFund, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Power Platform Fundamentals", image: BADGES.powerFund, date: "Mayo 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_togaf",
+          name: "The Open Group",
+          logoUrl: VENDOR_LOGOS.togaf,
+          tags: ["Enterprise Architecture", "Framework"],
+          certifications: [
+            { name: "TOGAF® Enterprise Architecture Practitioner", image: BADGES.togafP, date: "Junio 2025", credentialUrl: "#" },
+            { name: "TOGAF® Enterprise Architecture Foundation", image: BADGES.togafF, date: "Marzo 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_leanix",
+          name: "SAP LeanIX",
+          logoUrl: VENDOR_LOGOS.leanix,
+          tags: ["EA Tooling", "SaaS Management"],
+          certifications: [
+            { name: "LeanIX Certified Practitioner (Level 2)", image: BADGES.leanix2, date: "Marzo 2025", credentialUrl: "#" },
+            { name: "LeanIX Certified Practitioner (Level 1)", image: BADGES.leanix1, date: "Feb. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_ardoq",
+          name: "Ardoq",
+          logoUrl: VENDOR_LOGOS.ardoq,
+          tags: ["EA Tooling", "Data Driven"],
+          certifications: [
+            { name: "Ardoq Practitioner", image: BADGES.ardoqFund, date: "Oct. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: VENDOR_LOGOS.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: BADGES.safe6, date: "Abr. 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: VENDOR_LOGOS.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: BADGES.googleLead, date: "Dic. 2022", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_acc",
+          name: "Accenture",
+          logoUrl: VENDOR_LOGOS.accenture,
+          tags: ["Leadership", "Management"],
+          certifications: [
+            { name: "People Leadership Credential - Chapter 3: Empower", image: BADGES.accentureLeader, date: "Junio 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: BADGES.accentureLeader, date: "Mayo 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: BADGES.accentureLeader, date: "Nov. 2023", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: VENDOR_LOGOS.servicenow,
+          tags: ["ITSM", "Platform"],
+          certifications: [
+            { name: "Micro-Certification - Welcome to ServiceNow", image: BADGES.servicenow, date: "Jul. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_cambridge",
+          name: "University of Cambridge",
+          logoUrl: VENDOR_LOGOS.cambridge,
+          tags: ["Languages", "English"],
+          certifications: [
+            { name: "Certificate in Advanced English (CAE)", image: BADGES.togafF, date: "Oct. 2020", credentialUrl: "#" },
+            { name: "First Certificate in English (FCE)", image: BADGES.togafF, date: "Mayo 2012", credentialUrl: "#" }
           ]
         }
       ]
@@ -292,7 +539,7 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
         },
         {
           id: "t3",
-          quote: "Josep no solo implementó nueva tecnología, sino que instauró una cultura de eficiencia que impactó positivamente en nuestra rentabilidad desde el primer trimestre.",
+          quote: "Josep no solo implementó nueva tecnología, sinó que instauró una cultura de eficiencia que impactó positivamente en nuestra rentabilidad desde el primer trimestre.",
           author: "Marc R.",
           role: "Líder de Proyecto, Logística"
         }
@@ -368,11 +615,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       ]
     },
     contact: {
-      title: "Hablemos de tu próximo desafío",
-      subtitle: "Estoy siempre interesado en escuchar sobre nuevos proyectos y oportunidades de colaboración.",
-      availabilityTitle: "Disponibilidad",
-      availabilityText1: "Actualmente estoy aceptando nuevos proyectos de consultoría estratégica y transformación digital.",
-      availabilityText2: "No dudes en contactarme directamente por correo electrónico o LinkedIn para agendar una breve conversación introductoria.",
+      title: "Conectemos",
+      subtitle: "Siempre abierto a hablar sobre tecnología, estrategia e innovación. No dudes en contactar para compartir ideas o explorar sinergias.",
+      location: "Barcelona, España",
       rights: "Todos los derechos reservados."
     }
   },
@@ -434,29 +679,135 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       badge: "Continuous Learning",
       title: "Education & Certifications",
       subtitle: "Commitment to technical excellence requires constant learning and validation by industry standards.",
-      items: [
+      academicTitle: "Academic Background",
+      professionalTitle: "Professional Certifications",
+      viewCredential: "View credential",
+      academic: [
         {
-          id: "ed1",
-          title: "Professional Certifications",
-          institution: "Industry Standards",
-          description: "Technical and methodological accreditations validating knowledge in architecture, agility, and cloud platforms.",
-          items: [
-            "The Open Group Certified: TOGAF 9",
-            "Scaled Agile: SAFe 6 Agilist",
-            "AWS Certified Cloud Practitioner",
-            "Google Cloud Digital Leader",
-            "Microsoft Certified: Azure Fundamentals",
-            "Ardoq & LeanIX Certified"
+          id: "ac1",
+          degree: "Master in Digital Transformation",
+          institution: "ISDI",
+          year: "Sept 2022 - Nov 2022",
+          logoUrl: VENDOR_LOGOS.isdi,
+          description: "Cloud Specialization."
+        },
+        {
+          id: "ac2",
+          degree: "Bachelor's Degree in Computer Engineering",
+          institution: "Universitat de Barcelona",
+          year: "Sept 2015 - June 2022",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "Computer Science Minor."
+        },
+        {
+          id: "ac3",
+          degree: "Bachelor's Degree in Mathematics",
+          institution: "Universitat de Barcelona",
+          year: "Sept 2015 - 2017",
+          logoUrl: VENDOR_LOGOS.ub,
+          description: "First two years completed."
+        }
+      ],
+      professional: [
+        {
+          id: "v_aws",
+          name: "Amazon Web Services (AWS)",
+          logoUrl: VENDOR_LOGOS.aws,
+          tags: ["Cloud", "AI", "Partner"],
+          certifications: [
+            { name: "AWS Certified AI Practitioner", image: BADGES.awsAI, date: "May 2025", credentialUrl: "#" },
+            { name: "AWS Certified Cloud Practitioner", image: BADGES.awsPrac, date: "Dec. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Accreditation (Technical)", image: BADGES.awsPartnerTech, date: "Nov. 2022", credentialUrl: "#" },
+            { name: "AWS Partner: Sales Accreditation (Business)", image: BADGES.awsPartnerSales, date: "Nov. 2022", credentialUrl: "#" }
           ]
         },
         {
-          id: "ed2",
-          title: "Academic Background",
-          institution: "University & Postgraduate",
-          description: "Solid academic foundation in engineering and technology management.",
-          items: [
-            "Degree in Computer Engineering",
-            "Master in IT Systems Management"
+          id: "v_ms",
+          name: "Microsoft",
+          logoUrl: VENDOR_LOGOS.azure,
+          tags: ["Azure", "Data", "AI", "Power Platform"],
+          certifications: [
+            { name: "Microsoft Certified: Azure AI Fundamentals", image: BADGES.azureAI, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Data Fundamentals", image: BADGES.azureData, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Azure Fundamentals", image: BADGES.azureFund, date: "Jul. 2024", credentialUrl: "#" },
+            { name: "Microsoft Certified: Power Platform Fundamentals", image: BADGES.powerFund, date: "May 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_togaf",
+          name: "The Open Group",
+          logoUrl: VENDOR_LOGOS.togaf,
+          tags: ["Enterprise Architecture", "Framework"],
+          certifications: [
+            { name: "TOGAF® Enterprise Architecture Practitioner", image: BADGES.togafP, date: "June 2025", credentialUrl: "#" },
+            { name: "TOGAF® Enterprise Architecture Foundation", image: BADGES.togafF, date: "March 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_leanix",
+          name: "SAP LeanIX",
+          logoUrl: VENDOR_LOGOS.leanix,
+          tags: ["EA Tooling", "SaaS Management"],
+          certifications: [
+            { name: "LeanIX Certified Practitioner (Level 2)", image: BADGES.leanix2, date: "March 2025", credentialUrl: "#" },
+            { name: "LeanIX Certified Practitioner (Level 1)", image: BADGES.leanix1, date: "Feb. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_ardoq",
+          name: "Ardoq",
+          logoUrl: VENDOR_LOGOS.ardoq,
+          tags: ["EA Tooling", "Data Driven"],
+          certifications: [
+            { name: "Ardoq Practitioner", image: BADGES.ardoqFund, date: "Oct. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: VENDOR_LOGOS.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: BADGES.safe6, date: "Apr. 2024", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: VENDOR_LOGOS.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: BADGES.googleLead, date: "Dec. 2022", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_acc",
+          name: "Accenture",
+          logoUrl: VENDOR_LOGOS.accenture,
+          tags: ["Leadership", "Management"],
+          certifications: [
+            { name: "People Leadership Credential - Chapter 3: Empower", image: BADGES.accentureLeader, date: "June 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: BADGES.accentureLeader, date: "May 2024", credentialUrl: "#" },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: BADGES.accentureLeader, date: "Nov. 2023", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: VENDOR_LOGOS.servicenow,
+          tags: ["ITSM", "Platform"],
+          certifications: [
+            { name: "Micro-Certification - Welcome to ServiceNow", image: BADGES.servicenow, date: "Jul. 2025", credentialUrl: "#" }
+          ]
+        },
+        {
+          id: "v_cambridge",
+          name: "University of Cambridge",
+          logoUrl: VENDOR_LOGOS.cambridge,
+          tags: ["Languages", "English"],
+          certifications: [
+            { name: "Certificate in Advanced English (CAE)", image: BADGES.togafF, date: "Oct. 2020", credentialUrl: "#" },
+            { name: "First Certificate in English (FCE)", image: BADGES.togafF, date: "May 2012", credentialUrl: "#" }
           ]
         }
       ]
@@ -555,11 +906,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
       ]
     },
     contact: {
-      title: "Let's talk about your next challenge",
-      subtitle: "I am always interested in hearing about new projects and collaboration opportunities.",
-      availabilityTitle: "Availability",
-      availabilityText1: "I am currently accepting new strategic consulting and digital transformation projects.",
-      availabilityText2: "Feel free to contact me directly via email or LinkedIn to schedule a brief introductory conversation.",
+      title: "Let's Connect",
+      subtitle: "Always open to discussing technology, strategy, and innovation. Feel free to reach out to share ideas or explore synergies.",
+      location: "Barcelona, Spain",
       rights: "All rights reserved."
     }
   }

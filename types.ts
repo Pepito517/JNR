@@ -22,12 +22,29 @@ export interface TestimonialItem {
   role: string;
 }
 
-export interface EducationItem {
+// New Education Structures
+export interface AcademicItem {
   id: string;
-  title: string;
+  degree: string;
   institution: string;
-  description: string;
-  items: string[];
+  year: string;
+  logoUrl: string;
+  description?: string;
+}
+
+export interface CertificationItem {
+  name: string;
+  image: string; // URL to badge image
+  date: string;
+  credentialUrl: string;
+}
+
+export interface VendorItem {
+  id: string;
+  name: string;
+  logoUrl: string;
+  tags: string[];
+  certifications: CertificationItem[];
 }
 
 export interface CaseStudyItem {
@@ -41,24 +58,6 @@ export interface CaseStudyItem {
   resultsTitle: string;
   results: string[];
   cta: string;
-}
-
-export interface ProfileData {
-  name: string;
-  title: string;
-  tagline: string;
-  about: string;
-  aboutText1: string;
-  aboutText2: string;
-  yearsExp: string;
-  projectsLed: string;
-  yearsLabel: string;
-  projectsLabel: string;
-  linkedinUrl: string;
-  email: string;
-  location: string;
-  connectLinkedin: string;
-  viewPortfolio: string;
 }
 
 export interface TranslationStructure {
@@ -94,7 +93,11 @@ export interface TranslationStructure {
     badge: string;
     title: string;
     subtitle: string;
-    items: EducationItem[];
+    academicTitle: string;
+    professionalTitle: string;
+    viewCredential: string;
+    academic: AcademicItem[];
+    professional: VendorItem[];
   };
   testimonials: {
     title: string;
@@ -121,9 +124,7 @@ export interface TranslationStructure {
   contact: {
     title: string;
     subtitle: string;
-    availabilityTitle: string;
-    availabilityText1: string;
-    availabilityText2: string;
+    location: string; // Nueva propiedad
     rights: string;
   };
 }

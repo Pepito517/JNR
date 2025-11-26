@@ -49,16 +49,18 @@ export const Experience: React.FC = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute left-6 md:left-0 top-2 bottom-0 w-0.5 bg-slate-200 md:ml-4"></div>
+          {/* Vertical Line - Adjusted positioning for mobile */}
+          <div className="absolute left-4 md:left-0 top-2 bottom-0 w-0.5 bg-slate-200 md:ml-4"></div>
 
           <div className="space-y-8 md:space-y-12">
             {t.experience.items.map((item) => {
               const isExpanded = expandedId === item.id;
               
               return (
-                <div key={item.id} className="relative pl-20 md:pl-24">
+                <div key={item.id} className="relative pl-12 md:pl-24"> {/* Reduced padding-left from pl-20 to pl-12 for mobile */}
                   
-                  <div className={`absolute left-6 md:left-0 md:ml-4 -translate-x-1/2 top-0 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white shadow z-10 transition-colors duration-300 ${isExpanded ? 'bg-brand-600' : 'bg-slate-300 group-hover:bg-brand-400'}`}>
+                  {/* Timeline Dot - Adjusted left position from left-6 to left-4 */}
+                  <div className={`absolute left-4 md:left-0 md:ml-4 -translate-x-1/2 top-0 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white shadow z-10 transition-colors duration-300 ${isExpanded ? 'bg-brand-600' : 'bg-slate-300 group-hover:bg-brand-400'}`}>
                     <BriefcaseIcon className={`w-4 h-4 ${isExpanded ? 'text-white' : 'text-slate-600'}`} />
                   </div>
                   
@@ -85,7 +87,8 @@ export const Experience: React.FC = () => {
                               alt={`Logo ${item.company}`} 
                               className="h-8 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                             />
-                             <span className="text-xs font-bold tracking-wide text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-full whitespace-nowrap">
+                             {/* Removed whitespace-nowrap to prevent clipping on small mobile screens */}
+                             <span className="text-xs font-bold tracking-wide text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-full text-center">
                               {item.period}
                             </span>
                          </div>
