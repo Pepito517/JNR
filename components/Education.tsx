@@ -170,15 +170,18 @@ export const Education: React.FC = () => {
                                 <p className="text-xs text-slate-500 mb-3">
                                   {cert.date}
                                 </p>
-                                <a 
-                                  href={cert.credentialUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 hover:underline"
-                                >
-                                  {t.education.viewCredential}
-                                  <ExternalLinkIcon className="w-3 h-3" />
-                                </a>
+                                
+                                {cert.credentialUrl && cert.credentialUrl !== '#' && (
+                                  <a 
+                                    href={cert.credentialUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-700 hover:underline"
+                                  >
+                                    {t.education.viewCredential}
+                                    <ExternalLinkIcon className="w-3 h-3" />
+                                  </a>
+                                )}
                               </div>
                             </div>
                           ))}

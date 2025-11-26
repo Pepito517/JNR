@@ -124,7 +124,10 @@ export interface TranslationStructure {
   contact: {
     title: string;
     subtitle: string;
-    location: string; // Nueva propiedad
+    location: string;
     rights: string;
   };
 }
+
+export type Language = 'ca' | 'es' | 'en';
+export type MultiLanguageString = Record<Language, string>;
