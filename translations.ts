@@ -115,6 +115,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: IMAGES.logos.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Des. 2022", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
           id: "v_togaf",
           name: "The Open Group",
           logoUrl: IMAGES.logos.togaf,
@@ -122,6 +131,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           certifications: [
             { name: "TOGAF® Enterprise Architecture Practitioner", image: IMAGES.badges.togafP, date: "Juny 2025", credentialUrl: LINKS.credentials.default },
             { name: "TOGAF® Enterprise Architecture Foundation", image: IMAGES.badges.togafF, date: "Març 2025", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: IMAGES.logos.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Abr. 2024", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -144,21 +162,13 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
-          id: "v_safe",
-          name: "Scaled Agile, Inc.",
-          logoUrl: IMAGES.logos.safe,
-          tags: ["Agile", "Transformation"],
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: IMAGES.logos.servicenow,
+          tags: ["ITSM", "Platform"],
           certifications: [
-            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Abr. 2024", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_google",
-          name: "Google Cloud",
-          logoUrl: IMAGES.logos.google,
-          tags: ["Cloud", "Digital Transformation"],
-          certifications: [
-            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Des. 2022", credentialUrl: LINKS.credentials.default }
+            { name: "Enterprise Architecture Implementation Delivery Accreditation", image: IMAGES.badges.servicenow2, date: "Jul. 2025", credentialUrl: LINKS.credentials.default },
+            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -167,18 +177,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.accenture,
           tags: ["Leadership", "Management"],
           certifications: [
-            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader, date: "Juny 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader, date: "Maig 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_snow",
-          name: "ServiceNow",
-          logoUrl: IMAGES.logos.servicenow,
-          tags: ["ITSM", "Platform"],
-          certifications: [
-            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
+            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader1, date: "Juny 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader2, date: "Maig 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader3, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -187,8 +188,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.cambridge,
           tags: ["Languages", "English"],
           certifications: [
-            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.togafF, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
-            { name: "First Certificate in English (FCE)", image: IMAGES.badges.togafF, date: "Maig 2012", credentialUrl: LINKS.credentials.default }
+            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.cae, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
+            { name: "First Certificate in English (FCE)", image: IMAGES.badges.fce, date: "Maig 2012", credentialUrl: LINKS.credentials.default }
           ]
         }
       ]
@@ -406,6 +407,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: IMAGES.logos.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Dic. 2022", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
           id: "v_togaf",
           name: "The Open Group",
           logoUrl: IMAGES.logos.togaf,
@@ -413,6 +423,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           certifications: [
             { name: "TOGAF® Enterprise Architecture Practitioner", image: IMAGES.badges.togafP, date: "Junio 2025", credentialUrl: LINKS.credentials.default },
             { name: "TOGAF® Enterprise Architecture Foundation", image: IMAGES.badges.togafF, date: "Marzo 2025", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: IMAGES.logos.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Abr. 2024", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -435,21 +454,13 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
-          id: "v_safe",
-          name: "Scaled Agile, Inc.",
-          logoUrl: IMAGES.logos.safe,
-          tags: ["Agile", "Transformation"],
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: IMAGES.logos.servicenow,
+          tags: ["ITSM", "Platform"],
           certifications: [
-            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Abr. 2024", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_google",
-          name: "Google Cloud",
-          logoUrl: IMAGES.logos.google,
-          tags: ["Cloud", "Digital Transformation"],
-          certifications: [
-            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Dic. 2022", credentialUrl: LINKS.credentials.default }
+            { name: "Enterprise Architecture Implementation Delivery Accreditation", image: IMAGES.badges.servicenow2, date: "Jul. 2025", credentialUrl: LINKS.credentials.default },
+            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -458,18 +469,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.accenture,
           tags: ["Leadership", "Management"],
           certifications: [
-            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader, date: "Junio 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader, date: "Mayo 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_snow",
-          name: "ServiceNow",
-          logoUrl: IMAGES.logos.servicenow,
-          tags: ["ITSM", "Platform"],
-          certifications: [
-            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
+            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader1, date: "Junio 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader2, date: "Mayo 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader3, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -478,8 +480,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.cambridge,
           tags: ["Languages", "English"],
           certifications: [
-            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.togafF, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
-            { name: "First Certificate in English (FCE)", image: IMAGES.badges.togafF, date: "Mayo 2012", credentialUrl: LINKS.credentials.default }
+            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.cae, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
+            { name: "First Certificate in English (FCE)", image: IMAGES.badges.fce, date: "Mayo 2012", credentialUrl: LINKS.credentials.default }
           ]
         }
       ]
@@ -697,6 +699,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
+          id: "v_google",
+          name: "Google Cloud",
+          logoUrl: IMAGES.logos.google,
+          tags: ["Cloud", "Digital Transformation"],
+          certifications: [
+            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Dec. 2022", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
           id: "v_togaf",
           name: "The Open Group",
           logoUrl: IMAGES.logos.togaf,
@@ -704,6 +715,15 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           certifications: [
             { name: "TOGAF® Enterprise Architecture Practitioner", image: IMAGES.badges.togafP, date: "June 2025", credentialUrl: LINKS.credentials.default },
             { name: "TOGAF® Enterprise Architecture Foundation", image: IMAGES.badges.togafF, date: "March 2025", credentialUrl: LINKS.credentials.default }
+          ]
+        },
+        {
+          id: "v_safe",
+          name: "Scaled Agile, Inc.",
+          logoUrl: IMAGES.logos.safe,
+          tags: ["Agile", "Transformation"],
+          certifications: [
+            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Apr. 2024", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -726,21 +746,13 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           ]
         },
         {
-          id: "v_safe",
-          name: "Scaled Agile, Inc.",
-          logoUrl: IMAGES.logos.safe,
-          tags: ["Agile", "Transformation"],
+          id: "v_snow",
+          name: "ServiceNow",
+          logoUrl: IMAGES.logos.servicenow,
+          tags: ["ITSM", "Platform"],
           certifications: [
-            { name: "Certificación SAFe® Agilist (SA) - Leading SAFe", image: IMAGES.badges.safe6, date: "Apr. 2024", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_google",
-          name: "Google Cloud",
-          logoUrl: IMAGES.logos.google,
-          tags: ["Cloud", "Digital Transformation"],
-          certifications: [
-            { name: "Google Cloud Certified Digital Cloud Leader", image: IMAGES.badges.googleLead, date: "Dec. 2022", credentialUrl: LINKS.credentials.default }
+            { name: "Enterprise Architecture Implementation Delivery Accreditation", image: IMAGES.badges.servicenow2, date: "Jul. 2025", credentialUrl: LINKS.credentials.default },
+            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -749,18 +761,9 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.accenture,
           tags: ["Leadership", "Management"],
           certifications: [
-            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader, date: "June 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader, date: "May 2024", credentialUrl: LINKS.credentials.default },
-            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
-          ]
-        },
-        {
-          id: "v_snow",
-          name: "ServiceNow",
-          logoUrl: IMAGES.logos.servicenow,
-          tags: ["ITSM", "Platform"],
-          certifications: [
-            { name: "Micro-Certification - Welcome to ServiceNow", image: IMAGES.badges.servicenow, date: "Jul. 2025", credentialUrl: LINKS.credentials.default }
+            { name: "People Leadership Credential - Chapter 3: Empower", image: IMAGES.badges.accentureLeader1, date: "June 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 2: Develop", image: IMAGES.badges.accentureLeader2, date: "May 2024", credentialUrl: LINKS.credentials.default },
+            { name: "People Leadership Credential - Chapter 1: Connect", image: IMAGES.badges.accentureLeader3, date: "Nov. 2023", credentialUrl: LINKS.credentials.default }
           ]
         },
         {
@@ -769,8 +772,8 @@ export const translations: Record<'ca' | 'es' | 'en', TranslationStructure> = {
           logoUrl: IMAGES.logos.cambridge,
           tags: ["Languages", "English"],
           certifications: [
-            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.togafF, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
-            { name: "First Certificate in English (FCE)", image: IMAGES.badges.togafF, date: "May 2012", credentialUrl: LINKS.credentials.default }
+            { name: "Certificate in Advanced English (CAE)", image: IMAGES.badges.cae, date: "Oct. 2020", credentialUrl: LINKS.credentials.default },
+            { name: "First Certificate in English (FCE)", image: IMAGES.badges.fce, date: "May 2012", credentialUrl: LINKS.credentials.default }
           ]
         }
       ]
