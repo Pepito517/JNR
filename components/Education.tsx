@@ -13,30 +13,50 @@ export const Education: React.FC = () => {
 
   useEffect(() => {
     const handleOpenVendorCard = (event: CustomEvent) => {
-      const vendorId = event.detail;
-      setExpandedVendorId(vendorId);
+      const targetVendorId = event.detail;
       
-      // Allow DOM to update before scrolling
-      setTimeout(() => {
-        const element = document.getElementById(`education-card-${vendorId}`);
-        if (element) {
-          const headerOffset = 100; // Adjust for fixed header
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
-      }, 100);
+      // Si ya está abierta la misma, no hacemos nada o podríamos scrollear a ella.
+      if (expandedVendorId === targetVendorId) return;
+
+      const performOpenAndScroll = () => {
+        setExpandedVendorId(targetVendorId);
+        
+        // Esperamos un instante a que React renderice la tarjeta abierta para calcular la altura correcta
+        setTimeout(() => {
+          const element = document.getElementById(`education-card-${targetVendorId}`);
+          if (element) {
+            const headerOffset = 100; // Ajuste para el header fijo + margen visual
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }, 100);
+      };
+
+      if (expandedVendorId) {
+        // 1. Si hay otra tarjeta abierta, la cerramos primero
+        setExpandedVendorId(null);
+        
+        // 2. Esperamos a que termine la transición CSS (duration-300 = 300ms)
+        // Damos un pequeño margen extra (350ms) para que el layout se estabilice
+        setTimeout(() => {
+          performOpenAndScroll();
+        }, 350);
+      } else {
+        // 3. Si no hay nada abierto, abrimos directamente
+        performOpenAndScroll();
+      }
     };
 
     window.addEventListener('open-vendor-card', handleOpenVendorCard as EventListener);
     return () => {
       window.removeEventListener('open-vendor-card', handleOpenVendorCard as EventListener);
     };
-  }, []);
+  }, [expandedVendorId]); // Añadimos expandedVendorId a la dependencia para tener el valor actualizado
 
   return (
     <section id="education" className="py-20 bg-white">
@@ -65,14 +85,14 @@ export const Education: React.FC = () => {
             <div className="h-px bg-slate-200 flex-1"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-6">
             {t.education.academic.map((item) => (
               <div key={item.id} className="bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-center">
                   
-                  {/* Left Column: Logo + Degree + Institution */}
-                  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6 text-center sm:text-left flex-1">
-                    <div className="w-24 h-24 shrink-0 rounded-xl bg-white p-2 border border-slate-100 flex items-center justify-center shadow-sm">
+                  {/* Left Column: Logo + Title + Institution */}
+                  <div className="flex items-center gap-6 text-left">
+                    <div className="w-20 h-20 shrink-0 rounded-xl bg-white p-2 border border-slate-100 flex items-center justify-center shadow-sm">
                       {item.logoUrl ? (
                          <img 
                             src={item.logoUrl} 
@@ -87,19 +107,19 @@ export const Education: React.FC = () => {
                       <h4 className="font-bold text-xl text-slate-900 leading-tight mb-2">
                         {item.degree}
                       </h4>
-                      <p className="text-brand-700 font-bold text-base uppercase tracking-wide">
+                      <p className="text-brand-700 font-bold text-sm uppercase tracking-wide">
                         {item.institution}
                       </p>
                     </div>
                   </div>
 
                   {/* Right Column: Date + Description */}
-                  <div className="flex flex-col items-center sm:items-end text-center sm:text-right shrink-0 md:max-w-xs border-t md:border-t-0 border-slate-200 pt-4 md:pt-0 w-full md:w-auto">
-                    <span className="inline-block px-4 py-1.5 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-2">
+                  <div className="flex flex-col md:items-end text-left md:text-right border-t md:border-t-0 border-slate-200 pt-4 md:pt-0">
+                    <span className="inline-block px-4 py-1.5 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-2 w-fit">
                       {item.year}
                     </span>
                     {item.description && (
-                        <p className="text-sm text-slate-500 italic">
+                        <p className="text-sm text-slate-500 italic max-w-xs">
                             {item.description}
                         </p>
                     )}
@@ -142,7 +162,7 @@ export const Education: React.FC = () => {
                   >
                     <div className="flex items-center gap-4 sm:gap-6 flex-1">
                       {/* Vendor Logo */}
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-white rounded-lg p-2 border border-slate-100 flex items-center justify-center">
+                      <div className="w-20 h-20 shrink-0 bg-white rounded-lg p-2 border border-slate-100 flex items-center justify-center">
                         <img 
                           src={vendor.logoUrl} 
                           alt={vendor.name} 
@@ -170,7 +190,9 @@ export const Education: React.FC = () => {
 
                     {/* Expand Icon */}
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
-                      isExpanded ? 'bg-brand-100 text-brand-600 rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-brand-600 group-hover:text-white'
+                      isExpanded 
+                        ? 'bg-brand-100 text-brand-600 rotate-180' 
+                        : 'bg-slate-100 text-slate-400 group-hover:bg-brand-600 group-hover:text-white'
                     }`}>
                       <ChevronDownIcon className="w-5 h-5" />
                     </div>
@@ -178,7 +200,7 @@ export const Education: React.FC = () => {
 
                   {/* Certifications Grid (Expandable) */}
                   <div 
-                    className={`grid transition-[grid-template-rows] duration-500 ease-in-out bg-slate-50/50 ${
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out bg-slate-50/50 ${
                       isExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                     }`}
                   >
