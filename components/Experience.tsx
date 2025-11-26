@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { ChevronDownIcon, BriefcaseIcon } from './Icons';
@@ -8,32 +9,6 @@ export const Experience: React.FC = () => {
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
-  };
-
-  const parseAchievement = (text: string) => {
-    const firstColonIndex = text.indexOf(':');
-    if (firstColonIndex === -1) return { description: text };
-
-    const year = text.substring(0, firstColonIndex).trim();
-    const remainder1 = text.substring(firstColonIndex + 1).trim();
-
-    const hyphenIndex = remainder1.indexOf(' - ');
-    if (hyphenIndex === -1) {
-      return { year, description: remainder1 };
-    }
-
-    const sector = remainder1.substring(0, hyphenIndex).trim();
-    const remainder2 = remainder1.substring(hyphenIndex + 3).trim();
-
-    const secondColonIndex = remainder2.indexOf(':');
-    if (secondColonIndex === -1) {
-      return { year, sector, title: remainder2 };
-    }
-
-    const title = remainder2.substring(0, secondColonIndex).trim();
-    const description = remainder2.substring(secondColonIndex + 1).trim();
-
-    return { year, sector, title, description };
   };
 
   return (
@@ -115,38 +90,34 @@ export const Experience: React.FC = () => {
                         <div className="px-6 md:px-8 pb-8 pt-2 border-t border-slate-200">
                           <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 mt-4">{t.experience.detailTitle}</h4>
                           <ul className="space-y-6">
-                            {item.achievements.map((achievement, i) => {
-                              const { year, sector, title, description } = parseAchievement(achievement);
-
-                              return (
+                            {item.achievements.map((achievement, i) => (
                                 <li key={i} className="flex items-start text-sm text-slate-700 group/item relative pl-4 border-l-2 border-slate-200 hover:border-brand-500 transition-colors duration-300">
                                   <div className="flex flex-col gap-1 w-full">
                                     <div className="flex flex-wrap items-center gap-2 mb-1">
-                                        {year && (
+                                        {achievement.year && (
                                             <span className="font-mono font-bold text-white bg-slate-800 px-2 py-0.5 rounded text-xs">
-                                              {year}
+                                              {achievement.year}
                                             </span>
                                         )}
-                                        {sector && (
+                                        {achievement.sector && (
                                           <span className="text-brand-600 font-bold uppercase tracking-wide text-[11px]">
-                                            {sector}
+                                            {achievement.sector}
                                           </span>
                                         )}
                                     </div>
                                     
-                                    {title ? (
+                                    {achievement.title ? (
                                       <strong className="block text-slate-900 text-base font-bold leading-snug">
-                                        {title}
+                                        {achievement.title}
                                       </strong>
                                     ) : null}
                                     
                                     <span className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">
-                                      {description}
+                                      {achievement.description}
                                     </span>
                                   </div>
                                 </li>
-                              );
-                            })}
+                            ))}
                           </ul>
                         </div>
                       </div>

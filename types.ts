@@ -1,10 +1,18 @@
+
+export interface AchievementItem {
+  year: string;
+  sector: string;
+  title: string;
+  description: string;
+}
+
 export interface ExperienceItem {
   id: string;
   role: string;
   company: string;
   period: string;
   description: string;
-  achievements: string[];
+  achievements: AchievementItem[]; // Changed from string[] to structured object
   logoUrl: string;
 }
 

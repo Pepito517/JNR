@@ -1,5 +1,7 @@
+
 import { TranslationStructure, Language } from './types';
 import { PROFILE, IMAGES, LINKS, EDUCATION_DATA } from './constants';
+import { EXPERIENCE_DATA } from './experienceInfo';
 
 const getEducationData = (lang: Language) => {
   return {
@@ -27,6 +29,30 @@ const getEducationData = (lang: Language) => {
         image: cert.image,
         date: cert.date[lang],
         credentialUrl: cert.credentialUrl
+      }))
+    }))
+  };
+};
+
+const getExperienceData = (lang: Language) => {
+  return {
+    title: lang === 'ca' ? "Trajectòria professional" : lang === 'es' ? "Trayectoria profesional" : "Professional Experience",
+    subtitle: lang === 'ca' ? "Fes clic a les targetes per explorar el detall dels projectes." : lang === 'es' ? "Haz clic en las tarjetas para explorar el detalle de los proyectos." : "Click on the cards to explore project details.",
+    detailTitle: lang === 'ca' ? "Detall de projectes" : lang === 'es' ? "Detalle de proyectos" : "Project Details",
+    expand: lang === 'ca' ? "Veure projectes destacats" : lang === 'es' ? "Ver proyectos destacados" : "View featured projects",
+    collapse: lang === 'ca' ? "Ocultar detalls" : lang === 'es' ? "Ocultar detalles" : "Hide details",
+    items: EXPERIENCE_DATA.map(item => ({
+      id: item.id,
+      role: item.role,
+      company: item.company,
+      period: item.period[lang],
+      description: item.description[lang],
+      logoUrl: item.logoUrl,
+      achievements: item.achievements.map(ach => ({
+        year: ach.year,
+        sector: ach.sector[lang],
+        title: ach.title[lang],
+        description: ach.description[lang]
       }))
     }))
   };
@@ -112,53 +138,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       ]
     },
-    experience: {
-      title: "Trajectòria professional",
-      subtitle: "Fes clic a les targetes per explorar el detall dels projectes.",
-      detailTitle: "Detall de projectes",
-      expand: "Veure projectes destacats",
-      collapse: "Ocultar detalls",
-      items: [
-        {
-          id: "1",
-          role: "Technology Strategy & Transformation Senior Consultant",
-          company: "NTT DATA Europe & Latam",
-          period: "Gen. 2025 - Actualitat",
-          description: "Consultoria estratègica enfocada en evolució d'arquitectura, anàlisi de sistemes crítics i definició de marcs d'arquitectura empresarial.",
-          logoUrl: IMAGES.logos.ntt,
-          achievements: [
-            "2025: SECTOR PÚBLIC (TRANSPORT) - Evolución de arquitectura y sistemas: Análisis de las capacidades actuales a nivel de aplicaciones y tecnología como parte de un importante programa de Transformación Digital, con el objetivo de definir la arquitectura objetivo y formular un plan estratégico de transición, detallando iniciativas concretas para migrar hacia una plataforma tecnológica modernizada.",
-            "2025: SECTOR PÚBLIC - Análisis de disposición para la toma de un sistema: Como parte de una Oficina Técnica, alineación estratégica de múltiples líneas de trabajo (Arquitectura de Solución, Interoperabilidad e Integración, DevOps, Seguridad, etc.) para llevar a cabo una evaluación de preparación para la asunción de un sistema crítico. El proyecto incluyó un análisis de riesgos sobre los servicios del proveedor actual, que concluyó con la creación d'un plan de mitigación integral, iniciativas de remediación y una hoja de ruta detallada para la implementación.",
-            "2025: COMPANYIA D'ASSEGURANCES - Visión y análisis de arquitectura: Evaluación de las capacidades actuales de la función de arquitectura empresarial para analizar su grado de madurez y generación de principios directors per al futur de l'arquitectura de la companyia, acompanyada de la descripció d'iniciatives a executar per assolir els objectius proposats en termes de definició del marc d'arquitectura i evolució tecnològica."
-          ]
-        },
-        {
-          id: "2",
-          role: "Technology Strategy & Advisory Analyst",
-          company: "Accenture España",
-          period: "Set. 2022 - Gen. 2025",
-          description: "Consultoria de transformació cloud, modernització de sistemes i optimització de procesos IT per a grans clients.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2024~2025: ASSEGURADORA NACIONAL - Oficina de Transformación Cloud: Acompañamiento de los J2C de las distintas entidades internacionales de la compañía con el objetivo de estandarizar el proceso de adopción de la nube, analizar el parque de aplicaciones actual, definir arquetipos, aceleradores y trackers de migración, planificar las migraciones a alto nivel, definir el nuevo modelo operativo y crear una comunidad cloud en la empresa.",
-            "2024: SECTOR PÚBLIC - Plan de Modernización de Sistemas: Evaluación del mapa de aplicaciones en base a criterios técnicos y revisión de arquitectura técnica para el posterior diseño del mapa de aplicaciones futuro, identificación de iniciativas y programas adicionales incluyendo automatización y activos de inteligencia artificial, culminant en la elaboración del plan per als següents 3 anys amb un conjunto de programes e iniciatives que donin resposta a les necessitats tecnològiques avaluades.",
-            "2024: COMPANYIA DE MARKETPLACES DIGITALS - Análisis para Insourcing de EPSS: Análisis en profundidad de los datos, los procesos y la tecnología relacionados con el servicio de EPSS proporcionado por proveedor externo para comprender el servicio actual y originar la estrategia futura de internalización de dicho servicio.",
-            "2022~2024: ENTITAT BANCÀRIA NACIONAL - Implantación de herramienta de PPM: Definición y operativización de procesos y metodologías de trabajo de las distintas organizaciones del cliente a través de implantaciones a medida en herramienta de PPM para funcionalidades como: gestión de proyectos y demanda, asignación de recursos, gestión de presupuesto, inclusión de nuevas organizaciones, etc."
-          ]
-        },
-        {
-          id: "3",
-          role: "Technology Strategy & Advisory Intern",
-          company: "Accenture España",
-          period: "Abr. 2021 - Ago. 2022",
-          description: "Inici de carrera profesional participant en projectes estratègics per al sector financer.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2021~2022: SECTOR BANCARI - Gobierno de negocio: Desarrollo de proyectos de gobierno de negocio para el sector bancario."
-          ]
-        }
-      ]
-    },
+    experience: getExperienceData('ca'),
     certifications: {
       title: "Certificacions i tecnologies"
     },
@@ -267,53 +247,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       ]
     },
-    experience: {
-      title: "Trayectoria profesional",
-      subtitle: "Haz clic en las tarjetas para explorar el detalle de los proyectos.",
-      detailTitle: "Detalle de proyectos",
-      expand: "Ver proyectos destacados",
-      collapse: "Ocultar detalles",
-      items: [
-        {
-          id: "1",
-          role: "Technology Strategy & Transformation Senior Consultant",
-          company: "NTT DATA Europe & Latam",
-          period: "Ene. 2025 - Actualidad",
-          description: "Consultoría estratégica enfocada en evolución de arquitectura, análisis de sistemas críticos y definición de marcos de arquitectura empresarial.",
-          logoUrl: IMAGES.logos.ntt,
-          achievements: [
-            "2025: SECTOR PÚBLICO (TRANSPORTE) - Evolución de arquitectura y sistemas: Análisis de las capacidades actuales a nivel de aplicaciones y tecnología como parte de un importante programa de Transformación Digital, con el objetivo de definir la arquitectura objetivo y formular un plan estratégico de transición, detallando iniciativas concretas para migrar hacia una plataforma tecnológica modernizada.",
-            "2025: SECTOR PÚBLICO - Análisis de disposición para la toma de un sistema: Como parte de una Oficina Técnica, alineación estratégica de múltiples líneas de trabajo (Arquitectura de Solución, Interoperabilidad e Integración, DevOps, Seguridad, etc.) para llevar a cabo una evaluación de preparación para la asunción de un sistema crítico. El proyecto incluyó un análisis de riesgos sobre los servicios del proveedor actual, que concluyó con la creación d'un plan de mitigación integral, iniciativas de remediación y una hoja de ruta detallada para la implementación.",
-            "2025: COMPAÑÍA DE SEGUROS - Visión y análisis de arquitectura: Evaluación de las capacidades actuales de la función de arquitectura empresarial para analizar su grado de madurez y generación de principios directores para el futuro de la arquitectura de la compañía, acompañada de la descripción de iniciativas a ejecutar para alcanzar los objetivos propuestos en términos de definición del marco de arquitectura y evolución tecnológica."
-          ]
-        },
-        {
-          id: "2",
-          role: "Technology Strategy & Advisory Analyst",
-          company: "Accenture España",
-          period: "Sept. 2022 - Ene. 2025",
-          description: "Consultoría de transformación cloud, modernización de sistemas y optimización de procesos IT para grandes clientes.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2024~2025: ASEGURADORA NACIONAL - Oficina de Transformación Cloud: Acompañamiento de los J2C de las distintas entidades internacionales de la compañía con el objetivo de estandarizar el proceso de adopción de la nube, analizar el parque de aplicaciones actual, definir arquetipos, aceleradores y trackers de migración, planificar las migraciones a alto nivel, definir el nuevo modelo operativo y crear una comunidad cloud en la empresa.",
-            "2024: SECTOR PÚBLICO - Plan de Modernización de Sistemas: Evaluación del mapa de aplicaciones en base a criterios técnicos y revisión de arquitectura técnica para el posterior diseño del mapa de aplicaciones futuro, identificación de iniciativas y programas adicionales incluyendo automatización y activos de inteligencia artificial, culminant en la elaboración del plan para los siguientes 3 años con un conjunto de programas e iniciativas que den respuesta a las necesidades tecnológicas evaluadas.",
-            "2024: COMPAÑÍA DE MARKETPLACES DIGITALES - Análisis para Insourcing de EPSS: Análisis en profundidad de los datos, los procesos y la tecnología relacionados con el servicio de EPSS proporcionado por proveedor externo para comprender el servicio actual y originar la estrategia futura de internalización del servicio.",
-            "2022~2024: ENTIDAD BANCARIA NACIONAL - Implantación de herramienta de PPM: Definición y operativización de procesos y metodologías de trabajo de las distintas organizaciones del cliente a través de implantaciones a medida en herramienta de PPM para funcionalidades como: gestión de proyectos y demanda, asignación de recursos, gestión de presupuesto, inclusión de nuevas organizaciones, etc."
-          ]
-        },
-        {
-          id: "3",
-          role: "Technology Strategy & Advisory Intern",
-          company: "Accenture España",
-          period: "Abr. 2021 - Ago. 2022",
-          description: "Inicio de carrera profesional participando en proyectos estratégicos para el sector financiero.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2021~2022: SECTOR BANCARIO - Gobierno de negocio: Desarrollo de proyectos de gobierno de negocio para el sector bancario."
-          ]
-        }
-      ]
-    },
+    experience: getExperienceData('es'),
     certifications: {
       title: "Certificaciones y tecnologías"
     },
@@ -422,53 +356,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       ]
     },
-    experience: {
-      title: "Professional Experience",
-      subtitle: "Click on the cards to explore project details.",
-      detailTitle: "Project Details",
-      expand: "View featured projects",
-      collapse: "Hide details",
-      items: [
-        {
-          id: "1",
-          role: "Technology Strategy & Transformation Senior Consultant",
-          company: "NTT DATA Europe & Latam",
-          period: "Jan. 2025 - Present",
-          description: "Strategic consulting focused on architecture evolution, critical systems analysis, and definition of enterprise architecture frameworks.",
-          logoUrl: IMAGES.logos.ntt,
-          achievements: [
-            "2025: PUBLIC SECTOR (TRANSPORT) - Architecture and systems evolution: Analysis of current capabilities at the application and technology level as part of a major Digital Transformation program, aiming to define the target architecture and formulate a strategic transition plan, detailing concrete initiatives to migrate towards a modernized technological platform.",
-            "2025: PUBLIC SECTOR - System intake readiness analysis: As part of a Technical Office, strategic alignment of multiple workstreams (Solution Architecture, Interoperability and Integration, DevOps, Security, etc.) to conduct a readiness assessment for assuming a critical system. The project included a risk analysis on current provider services, concluding with the creation of a comprehensive mitigation plan, remediation initiatives, and a detailed implementation roadmap.",
-            "2025: INSURANCE COMPANY - Architecture vision and analysis: Assessment of current enterprise architecture function capabilities to analyze maturity levels and generation of guiding principles for the company's future architecture, accompanied by a description of initiatives to execute to achieve proposed objectives in terms of architecture framework definition and technological evolution."
-          ]
-        },
-        {
-          id: "2",
-          role: "Technology Strategy & Advisory Analyst",
-          company: "Accenture Spain",
-          period: "Sept. 2022 - Jan. 2025",
-          description: "Cloud transformation consulting, systems modernization, and IT process optimization for large clients.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2024~2025: NATIONAL INSURER - Cloud Transformation Office: Accompanying J2C of various international entities of the company with the aim of standardizing the cloud adoption process, analyzing the current application landscape, defining archetypes, accelerators, and migration trackers, planning high-level migrations, defining the new operating model, and creating a cloud community within the company.",
-            "2024: PUBLIC SECTOR - Systems Modernization Plan: Evaluation of the application map based on technical criteria and technical architecture review for the subsequent design of the future application map, identification of additional initiatives and programs including automation and artificial intelligence assets, culminating in the development of a 3-year plan with a set of programs and initiatives responding to evaluated technological needs.",
-            "2024: DIGITAL MARKETPLACE COMPANY - EPSS Insourcing Analysis: In-depth analysis of data, processes, and technology related to the EPSS service provided by an external vendor to understand the current service and originate the future strategy for insourcing said service.",
-            "2022~2024: NATIONAL BANKING ENTITY - PPM Tool Implementation: Definition and operationalization of processes and work methodologies of different client organizations through custom implementations in PPM tool for functionalities such as: project and demand management, resource allocation, budget management, inclusion of new organizations, etc."
-          ]
-        },
-        {
-          id: "3",
-          role: "Technology Strategy & Advisory Intern",
-          company: "Accenture Spain",
-          period: "Apr. 2021 - Aug. 2022",
-          description: "Start of professional career participating in strategic projects for the financial sector.",
-          logoUrl: IMAGES.logos.accenture,
-          achievements: [
-            "2021~2022: BANKING SECTOR - Business Governance: Development of business governance projects for the banking sector."
-          ]
-        }
-      ]
-    },
+    experience: getExperienceData('en'),
     certifications: {
       title: "Certifications and Technologies"
     },
