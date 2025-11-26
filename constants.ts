@@ -350,13 +350,14 @@ export const EDUCATION_DATA = {
 };
 
 // For Certifications Carousel
+// Added Education IDs to link logos to cards
 export const CERTIFICATION_LOGOS = [
-  { name: "AWS", url: IMAGES.logos.aws },
-  { name: "Microsoft Azure", url: IMAGES.logos.azure },
-  { name: "Google Cloud", url: IMAGES.logos.google },
-  { name: "The Open Group", url: IMAGES.logos.togaf },
-  { name: "SAFe", url: IMAGES.logos.safe },
-  { name: "LeanIX", url: IMAGES.logos.leanix },
-  { name: "Ardoq", url: IMAGES.logos.ardoq },
-  { name: "ServiceNow", url: IMAGES.logos.servicenow }
+  { name: "AWS", url: IMAGES.logos.aws, educationId: "v_aws" },
+  { name: "Microsoft Azure", url: IMAGES.logos.azure, educationId: "v_ms" },
+  { name: "Google Cloud", url: IMAGES.logos.google, educationId: "v_google" },
+  { name: "The Open Group", url: IMAGES.logos.togaf, educationId: "v_togaf" },
+  { name: "SAFe", url: IMAGES.logos.safe, educationId: "v_safe" },
+  { name: "LeanIX", url: IMAGES.logos.leanix, educationId: "v_leanix" },
+  { name: "Ardoq", url: IMAGES.logos.ardoq, educationId: "v_ardoq" },
+  { name: "ServiceNow", url: IMAGES.logos.servicenow, educationId: "v_snow" }
 ];

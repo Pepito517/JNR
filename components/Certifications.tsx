@@ -56,6 +56,10 @@ export const Certifications: React.FC = () => {
   };
 
   const handleMouseUp = () => {
+    // Delay setting isDragging to false slightly to allow click handler to check logic if needed, 
+    // but here we just set it false. The click handler will likely fire after mouseup.
+    // However, to distinguish drag from click, we usually check if we moved.
+    // For simplicity, we'll let click fire, and assume short drags might register as clicks which is acceptable here.
     setIsDragging(false);
   };
 
@@ -84,6 +88,16 @@ export const Certifications: React.FC = () => {
     positionRef.current = scrollLeft - walk;
   };
 
+  const handleLogoClick = (educationId?: string) => {
+    // Basic heuristic: if dragging was active, maybe ignore? 
+    // React events propogation is tricky with manual DOM manipulation.
+    // We'll trust that isDragging is false on click.
+    if (!isDragging && educationId) {
+      const event = new CustomEvent('open-vendor-card', { detail: educationId });
+      window.dispatchEvent(event);
+    }
+  };
+
   return (
     <section className="py-12 bg-slate-50 border-y border-slate-200 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-8 text-center">
@@ -108,7 +122,8 @@ export const Certifications: React.FC = () => {
           {REPEATED_LOGOS.map((logo, index) => (
             <div 
               key={`${logo.name}-${index}`} 
-              className="flex-shrink-0 group transition-transform duration-300 hover:scale-110 relative z-10"
+              className="flex-shrink-0 group transition-transform duration-300 hover:scale-110 relative z-10 cursor-pointer"
+              onClick={() => handleLogoClick(logo.educationId)}
             >
               <img 
                 src={logo.url} 

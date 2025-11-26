@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { EducationIcon, ChevronDownIcon, ExternalLinkIcon, BriefcaseIcon } from './Icons';
 
@@ -9,6 +9,33 @@ export const Education: React.FC = () => {
   const toggleVendor = (id: string) => {
     setExpandedVendorId(expandedVendorId === id ? null : id);
   };
+
+  useEffect(() => {
+    const handleOpenVendorCard = (event: CustomEvent) => {
+      const vendorId = event.detail;
+      setExpandedVendorId(vendorId);
+      
+      // Allow DOM to update before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(`education-card-${vendorId}`);
+        if (element) {
+          const headerOffset = 100; // Adjust for fixed header
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    };
+
+    window.addEventListener('open-vendor-card', handleOpenVendorCard as EventListener);
+    return () => {
+      window.removeEventListener('open-vendor-card', handleOpenVendorCard as EventListener);
+    };
+  }, []);
 
   return (
     <section id="education" className="py-20 bg-white">
@@ -92,6 +119,7 @@ export const Education: React.FC = () => {
               
               return (
                 <div 
+                  id={`education-card-${vendor.id}`}
                   key={vendor.id}
                   className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${
                     isExpanded 
