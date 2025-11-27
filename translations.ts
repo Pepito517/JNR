@@ -91,6 +91,8 @@ export const translations: Record<Language, TranslationStructure> = {
       p1: ABOUT_DATA.p1.ca,
       p2: ABOUT_DATA.p2.ca,
       p3: ABOUT_DATA.p3.ca,
+      languagesTitle: ABOUT_DATA.languages.label.ca,
+      languagesText: ABOUT_DATA.languages.items.ca,
       yearsLabel: ABOUT_DATA.yearsLabel.ca,
       projectsLabel: ABOUT_DATA.projectsLabel.ca
     },
@@ -165,6 +167,8 @@ export const translations: Record<Language, TranslationStructure> = {
       p1: ABOUT_DATA.p1.es,
       p2: ABOUT_DATA.p2.es,
       p3: ABOUT_DATA.p3.es,
+      languagesTitle: ABOUT_DATA.languages.label.es,
+      languagesText: ABOUT_DATA.languages.items.es,
       yearsLabel: ABOUT_DATA.yearsLabel.es,
       projectsLabel: ABOUT_DATA.projectsLabel.es
     },
@@ -239,6 +243,8 @@ export const translations: Record<Language, TranslationStructure> = {
       p1: ABOUT_DATA.p1.en,
       p2: ABOUT_DATA.p2.en,
       p3: ABOUT_DATA.p3.en,
+      languagesTitle: ABOUT_DATA.languages.label.en,
+      languagesText: ABOUT_DATA.languages.items.en,
       yearsLabel: ABOUT_DATA.yearsLabel.en,
       projectsLabel: ABOUT_DATA.projectsLabel.en
     },

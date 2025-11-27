@@ -68,6 +68,14 @@ export const ABOUT_DATA = {
     es: "He trabajado con grandes corporaciones y empresas de múltiples sectores (banca, seguros, sector público, transporte, organismos internacionales, comunicaciones, medios y tecnología, etc.), adaptando metodologías ágiles y arquitecturas modernas a las necesidades específicas de cada negocio.",
     en: "I have worked with large corporations and companies across multiple sectors (banking, insurance, public sector, transport, international organizations, communication, media & technology, etc.), adapting agile methodologies and modern architectures to the specific needs of each business."
   },
+  languages: {
+    label: { ca: "Idiomes", es: "Idiomas", en: "Languages" },
+    items: {
+      ca: "Català i castellà natius / Anglès fluid",
+      es: "Catalán y castellano nativos / Inglés fluido",
+      en: "Native Catalan, Spanish / Fluent English"
+    }
+  },
   yearsLabel: { ca: "Anys d'experiència", es: "Años de experiencia", en: "Years of Experience" },
   projectsLabel: { ca: "Projectes executats", es: "Proyectos ejecutados", en: "Projects Executed" }
 };

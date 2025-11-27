@@ -20,7 +20,8 @@ import {
   Briefcase,
   GraduationCap,
   BarChart3,
-  ExternalLink
+  ExternalLink,
+  Globe
 } from 'lucide-react';
 
 export const StrategyIcon = ({ className }: { className?: string }) => <Brain className={className} />;
@@ -45,6 +46,7 @@ export const EducationIcon = ({ className }: { className?: string }) => <Graduat
 export const BriefcaseIcon = ({ className }: { className?: string }) => <Briefcase className={className} />;
 export const ChartIcon = ({ className }: { className?: string }) => <BarChart3 className={className} />;
 export const ExternalLinkIcon = ({ className }: { className?: string }) => <ExternalLink className={className} />;
+export const GlobeIcon = ({ className }: { className?: string }) => <Globe className={className} />;
 
 export const getServiceIcon = (iconName: string, className?: string) => {
   switch (iconName) {

@@ -90,6 +90,8 @@ export interface TranslationStructure {
     p1: string;
     p2: string;
     p3: string;
+    languagesTitle: string;
+    languagesText: string;
     yearsLabel: string;
     projectsLabel: string;
   };

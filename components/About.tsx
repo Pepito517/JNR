@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { CAREER_START_YEAR } from '../constants';
 import { PROFILE_DATA } from '../aboutMe';
 import { useLanguage } from '../context/LanguageContext';
+import { GlobeIcon } from './Icons';
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
@@ -11,9 +13,9 @@ export const About: React.FC = () => {
   const yearsExp = currentYear - CAREER_START_YEAR + 1;
   
   // Calcular proyectos reales sumando los logros listados en la experiencia
-  const totalProjects = t.experience.items.reduce((total, item) => {
+  const totalProjects = t.experience.items?.reduce((total, item) => {
     return total + (item.achievements ? item.achievements.length : 0);
-  }, 0);
+  }, 0) || 0;
 
   return (
     <section id="about" className="py-20 bg-white">
@@ -45,6 +47,21 @@ export const About: React.FC = () => {
               <p>
                 {t.about.p3}
               </p>
+            </div>
+
+            {/* Languages Section - Added hover:border-brand-200 and transition-colors */}
+            <div className="mt-8 flex items-center gap-3 text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-brand-200 transition-colors">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-600 shadow-sm border border-slate-100 shrink-0">
+                 <GlobeIcon className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">
+                  {t.about.languagesTitle}
+                </span>
+                <span className="font-medium text-sm md:text-base">
+                  {t.about.languagesText}
+                </span>
+              </div>
             </div>
 
             <div className="mt-8 grid grid-cols-2 gap-6">
