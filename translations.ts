@@ -16,10 +16,10 @@ import {
 const getEducationData = (lang: Language) => {
   return {
     badge: lang === 'ca' ? "Formació continuada" : lang === 'es' ? "Formación continua" : "Continuous Learning",
-    title: lang === 'ca' ? "Formació i Certificacions" : lang === 'es' ? "Formación y certificaciones" : "Education & Certifications",
+    title: lang === 'ca' ? "Formació i certificacions" : lang === 'es' ? "Formación y certificaciones" : "Education & Certifications",
     subtitle: lang === 'ca' ? "Compromís constant amb l'aprenentatge i la validació tècnica a través dels estàndards de la indústria." : lang === 'es' ? "Compromiso constante con el aprendizaje y la validación técnica a través de los estándares de la industria." : "Commitment to technical excellence requires constant learning and validation by industry standards.",
-    academicTitle: lang === 'ca' ? "Formació Académica" : lang === 'es' ? "Formación Académica" : "Academic Background",
-    professionalTitle: lang === 'ca' ? "Certificacions Professionals" : lang === 'es' ? "Certificaciones Profesionales" : "Professional Certifications",
+    academicTitle: lang === 'ca' ? "Formació académica" : lang === 'es' ? "Formación académica" : "Academic Background",
+    professionalTitle: lang === 'ca' ? "Certificacions professionals" : lang === 'es' ? "Certificaciones profesionales" : "Professional Certifications",
     viewCredential: lang === 'ca' ? "Veure credencial" : lang === 'es' ? "Ver credencial" : "View credential",
     academic: EDUCATION_DATA.academic.map(item => ({
       id: item.id,

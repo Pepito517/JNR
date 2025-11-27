@@ -16,7 +16,7 @@ export const PROFILE_DATA = {
 export const NAV_DATA = {
   home: { ca: "Inici", es: "Inicio", en: "Home" },
   about: { ca: "Sobre mi", es: "Sobre mí", en: "About me" },
-  services: { ca: "Serveis", es: "Servicios", en: "Services" },
+  services: { ca: "Especialització", es: "Especialización", en: "Expertise" },
   education: { ca: "Formació", es: "Formación", en: "Education" },
   testimonials: { ca: "Testimonis", es: "Testimonios", en: "Testimonials" },
   experience: { ca: "Experiència", es: "Experiencia", en: "Experience" },
@@ -30,9 +30,9 @@ export const HERO_DATA = {
     en: "Strategy • Technology • Innovation"
   },
   title: {
-    ca: "Consultor d'estratègia tecnològica",
-    es: "Consultor de estrategia tecnológica",
-    en: "Technology Strategy Consultant"
+    ca: "Consultor d'estratègia tecnològica | Enginyer informàtic",
+    es: "Consultor de estrategia tecnológica | Ingeniero informático",
+    en: "Technology Strategy Consultant | Computer Engineer"
   },
   tagline: {
     ca: "Impulsant l'eficiència operativa i el creixement a través de la transformació digital i la intel·ligència artificial.",
@@ -54,19 +54,19 @@ export const HERO_DATA = {
 export const ABOUT_DATA = {
   title: { ca: "Sobre mi", es: "Sobre mí", en: "About me" },
   p1: {
-    ca: "Consultor d'estratègia tecnològica orientat a resultats amb més de 10 anys d'experiència especialitzant-me en transformació digital, intel·ligència artificial i ciberseguretat. Compto amb un historial provat alineant iniciatives tecnològiques complexes amb objectius de negoci crítics per millorar dràsticament l'eficiència operativa i accelerar el creixement dels ingressos.",
-    es: "Consultor de estrategia tecnológica orientado a resultados con más de 10 años de experiencia especializándome en transformación digital, inteligencia artificial y ciberseguridad. Cuento con un historial probado alineando iniciativas tecnológicas complejas con objetivos de negocio críticos para mejorar drásticamente la eficiencia operativa y acelerar el crecimiento de los ingresos.",
-    en: "Results-oriented Technology Strategy Consultant with over 10 years of experience specializing in digital transformation, artificial intelligence, and cybersecurity. I have a proven track record of aligning complex technology initiatives with critical business goals to dramatically improve operational efficiency and accelerate revenue growth."
+    ca: "Professional amb experiència en projectes de transformació digital, arquitectura empresarial i estratègia cloud per a diverses empreses i organitzacions, amb un enfocament en la millora contínua per aplicar solucions innovadores i eficients en la indústria tecnològica.",
+    es: "Profesional con experiencia en proyectos de transformación digital, arquitectura empresarial y estrategia cloud para diversas empresas y organizaciones, con un enfoque en la mejora continua para aplicar soluciones innovadoras y eficientes en la industria tecnológica.",
+    en: "Strategy and consulting professional working on digital transformation projects, enterprise architecture, and cloud strategies for various companies and organizations, with a focus on continuous improvement to apply innovative and efficient solutions in the technology industry."
   },
   p2: {
-    ca: "Com a consultor independent, combino visió estratègica amb un profund coneixement tècnic. El meu enfocament es centra en desmitificar la tecnologia per a l'alta direcció, permetent decisions informades que impulsan el creixement.",
-    es: "Como consultor independiente, combino visión estratégica con un profundo conocimiento técnico. Mi enfoque se centra en desmitificar la tecnología para la alta dirección, permitiendo decisiones informadas que impulsan el crecimiento.",
-    en: "As an independent consultant, I combine strategic vision with deep technical knowledge. My focus is on demystifying technology for senior management, enabling informed decisions that drive growth."
+    ca: "Combino visió estratègica amb un profund coneixement tècnic. El meu enfocament es centra en desmitificar la tecnologia per a l'alta direcció, permetent decisions informades que impulsen el creixement.",
+    es: "Combino visión estratégica con un profundo conocimiento técnico. Mi enfoque se centra en desmitificar la tecnología para la alta dirección, permitiendo decisiones informadas que impulsan el crecimiento.",
+    en: "I combine strategic vision with deep technical knowledge. My focus is on demystifying technology for senior management, enabling informed decisions that drive growth."
   },
   p3: {
-    ca: "He treballat amb startups en fase de creixement i grans corporacions, adaptant metodologies àgils i arquitectures modernes a les necessitats específiques de cada negoci.",
-    es: "He trabajado con startups en fase de crecimiento y grandes corporaciones, adaptando metodologías ágiles y arquitecturas modernas a las necesidades específicas de cada negocio.",
-    en: "I have worked with growing startups and large corporations, adapting agile methodologies and modern architectures to the specific needs of each business."
+    ca: "He treballat amb grans corporacions i empreses de múltiples sectors, adaptant metodologies àgils i arquitectures modernes a les necessitats específiques de cada negoci.",
+    es: "He trabajado con grandes corporaciones y empresas de múltiples sectores, adaptando metodologías ágiles y arquitecturas modernas a las necesidades específicas de cada negocio.",
+    en: "I have worked with large corporations and companies across multiple sectors, adapting agile methodologies and modern architectures to the specific needs of each business."
   },
   yearsLabel: { ca: "Anys d'experiència", es: "Años de experiencia", en: "Years of Experience" },
   projectsLabel: { ca: "Projectes executats", es: "Proyectos ejecutados", en: "Projects Executed" }
@@ -84,9 +84,9 @@ export const SERVICES_DATA = {
       id: "s1",
       title: { ca: "Estratègia IT i govern", es: "Estrategia IT y gobierno", en: "IT Strategy & Governance" },
       description: {
-        ca: "Alineació de roadmap tecnològic amb KPIs de negoci i gestió d'inversions.",
-        es: "Alineación de roadmap tecnológico con KPIs de negocio y gestión de inversiones.",
-        en: "Aligning technology roadmap with business KPIs and investment management."
+        ca: "Gestió de projectes i programes de transformació digital mitjançant l'alineació del roadmap tecnològic amb resultats, objectius i indicadors de negoci, procurant el retorn de les inversions.",
+        es: "Gestión de proyectos y programas de transformación digital mediante la alineación del roadmap tecnológico con resultados, objetivos e indicadores de negocio, procurando el retorno de las inversiones.",
+        en: "Digital transformation projects and programs management by aligning the technology roadmap with business outcomes, objectives, and indicators, ensuring return on investment."
       },
       iconName: "Strategy"
     },
@@ -94,19 +94,19 @@ export const SERVICES_DATA = {
       id: "s2",
       title: { ca: "Arquitectura empresarial", es: "Arquitectura empresarial", en: "Enterprise Architecture" },
       description: {
-        ca: "Disseny de mapes de capacitats, gestió de portafoli d'aplicacions i definició d'arquitectures objectiu.",
-        es: "Diseño de mapas de capacidades, gestión de portafolio de aplicaciones y definición de arquitecturas objetivo.",
-        en: "Capability map design, application portfolio management, and target architecture definition."
+        ca: "Disseny de mapes de capacitats, gestió de portafoli d'aplicacions i definició d'arquitectures objectiu. Introducció de metodologies àgils per a l'evolució contínua de l'arquitectura i lideratge i suport a equips tècnics.",
+        es: "Diseño de mapas de capacidades, gestión de portafolio de aplicaciones y definición de arquitecturas objetivo. Introducción de metodologías ágiles para la evolución continua de la arquitectura y liderazgo y soporte a equipos técnicos.",
+        en: "Capability map design, application portfolio management, and target architecture definition. Introduction of agile methodologies for continuous architecture evolution and leadership and support to technical teams."
       },
       iconName: "Architecture"
     },
     {
       id: "s3",
-      title: { ca: "Transformació cloud i aplicacions", es: "Transformación cloud y aplicaciones", en: "Cloud & App Transformation" },
+      title: { ca: "Transformació cloud i d'aplicacions", es: "Transformación cloud y de aplicaciones", en: "Cloud & App Transformation" },
       description: {
-        ca: "Modernització d'arquitectures, estratègies de migració (6R) i disseny d'aplicacions natives al núvol.",
-        es: "Modernización de arquitecturas, estrategias de migración (6R) y diseño de aplicaciones nativas en la nube.",
-        en: "Architecture modernization, migration strategies (6R), and cloud-native application development."
+        ca: "Modernització d'arquitectures, estratègies de migració i disseny d'aplicacions natives al núvol. Implementació de pràctiques DevOps i automatització per optimitzar el desenvolupament i les operacions.",
+        es: "Modernización de arquitecturas, estrategias de migración y diseño de aplicaciones nativas en la nube. Implementación de prácticas DevOps y automatización para optimizar el desarrollo y las operaciones.",
+        en: "Architecture modernization, migration strategies, and cloud-native application development. Implementation of DevOps practices and automation to optimize development and operations."
       },
       iconName: "Cloud"
     },
@@ -114,9 +114,9 @@ export const SERVICES_DATA = {
       id: "s4",
       title: { ca: "Intel·ligència artificial i GenAI", es: "Inteligencia artificial y GenAI", en: "AI & GenAI" },
       description: {
-        ca: "Exploració de casos d'ús, desplegament d'agents intel·ligents i adopció d'IA Generativa.",
-        es: "Exploración de casos de uso, despliegue de agentes inteligentes y adopción de IA Generativa.",
-        en: "Use case exploration, intelligent agent deployment, and Generative AI adoption."
+        ca: "Integració d'IA en processos empresarials per millorar l'eficiència i la presa de decisions. Exploració de casos d'ús, desplegament d'agents intel·ligents i adopció d'IA Generativa.",
+        es: "Integración de IA en procesos empresariales para mejorar la eficiencia y la toma de decisiones. Exploración de casos de uso, despliegue de agentes inteligentes y adopción de IA Generativa.",
+        en: "Integration of AI into business processes to enhance efficiency and decision-making. Use case exploration, intelligent agent deployment, and Generative AI adoption."
       },
       iconName: "AI"
     }
