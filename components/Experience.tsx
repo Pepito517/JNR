@@ -8,7 +8,25 @@ export const Experience: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
+    const isExpanding = expandedId !== id;
+    setExpandedId(isExpanding ? id : null);
+
+    if (isExpanding) {
+      // Esperamos un momento a que el navegador procese el cambio de estado y la animación empiece
+      setTimeout(() => {
+        const element = document.getElementById(`experience-item-${id}`);
+        if (element) {
+          const headerOffset = 100; // Ajuste para el header fijo
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 300);
+    }
   };
 
   return (
@@ -32,7 +50,7 @@ export const Experience: React.FC = () => {
               const isExpanded = expandedId === item.id;
               
               return (
-                <div key={item.id} className="relative pl-12 md:pl-24"> {/* Reduced padding-left from pl-20 to pl-12 for mobile */}
+                <div key={item.id} id={`experience-item-${item.id}`} className="relative pl-12 md:pl-24"> {/* Reduced padding-left from pl-20 to pl-12 for mobile */}
                   
                   {/* Timeline Dot - Adjusted left position from left-6 to left-4 */}
                   <div className={`absolute left-4 md:left-0 md:ml-4 -translate-x-1/2 top-0 flex items-center justify-center w-10 h-10 rounded-full border-4 border-white shadow z-10 transition-colors duration-300 ${isExpanded ? 'bg-brand-600' : 'bg-slate-300 group-hover:bg-brand-400'}`}>

@@ -250,7 +250,7 @@ export const EDUCATION_DATA = {
       id: "v_leanix",
       name: "SAP LeanIX",
       logoUrl: IMAGES.logos.leanix,
-      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "SAP"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "Application Portfolio Management", "SAP"],
       certifications: [
         { 
           name: "LeanIX Certified Practitioner (Level 2)", 
@@ -270,7 +270,7 @@ export const EDUCATION_DATA = {
       id: "v_ardoq",
       name: "Ardoq",
       logoUrl: IMAGES.logos.ardoq,
-      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "Application Portfolio Management"],
       certifications: [
         { 
           name: "Ardoq Practitioner", 
@@ -284,7 +284,7 @@ export const EDUCATION_DATA = {
       id: "v_snow",
       name: "ServiceNow",
       logoUrl: IMAGES.logos.servicenow,
-      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "ServiceNow", "ITSM"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "Application Portfolio Management", "ServiceNow", "ITSM"],
       certifications: [
         { 
           name: "Enterprise Architecture Implementation Delivery Accreditation", 
@@ -304,7 +304,7 @@ export const EDUCATION_DATA = {
       id: "v_acc",
       name: "Accenture",
       logoUrl: IMAGES.logos.accenture,
-      tags: ["Leadership", "Management"],
+      tags: ["Leadership", "Management", "People Skills", "Soft Skills"],
       certifications: [
         { 
           name: "People Leadership Credential - Chapter 3: Empower", 
