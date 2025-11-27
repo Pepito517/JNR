@@ -138,7 +138,7 @@ export const EDUCATION_DATA = {
       id: "v_aws",
       name: "Amazon Web Services (AWS)",
       logoUrl: IMAGES.logos.aws,
-      tags: ["Cloud", "AI", "Partner"],
+      tags: ["Digital Transformation", "Cloud", "Data", "AI"],
       certifications: [
         { 
           name: "AWS Certified AI Practitioner", 
@@ -170,7 +170,7 @@ export const EDUCATION_DATA = {
       id: "v_ms",
       name: "Microsoft Azure",
       logoUrl: IMAGES.logos.azure,
-      tags: ["Azure", "Data", "AI", "Power Platform"],
+      tags: ["Digital Transformation", "Cloud", "Data", "AI", "Power Platform"],
       certifications: [
         { 
           name: "Microsoft Certified: Azure AI Fundamentals", 
@@ -202,7 +202,7 @@ export const EDUCATION_DATA = {
       id: "v_google",
       name: "Google Cloud",
       logoUrl: IMAGES.logos.google,
-      tags: ["Cloud", "Digital Transformation"],
+      tags: ["Digital Transformation", "Cloud", "Data", "AI"],
       certifications: [
         { 
           name: "Google Cloud Certified Digital Cloud Leader", 
@@ -216,7 +216,7 @@ export const EDUCATION_DATA = {
       id: "v_togaf",
       name: "The Open Group",
       logoUrl: IMAGES.logos.togaf,
-      tags: ["Enterprise Architecture", "Framework"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "Framework & Methodology"],
       certifications: [
         { 
           name: "TOGAF® Enterprise Architecture Practitioner", 
@@ -236,7 +236,7 @@ export const EDUCATION_DATA = {
       id: "v_safe",
       name: "Scaled Agile, Inc.",
       logoUrl: IMAGES.logos.safe,
-      tags: ["Agile", "Transformation"],
+      tags: ["Digital Transformation", "Strategy", "Agile", "Framework & Methodology"],
       certifications: [
         { 
           name: "Certificación SAFe® Agilist (SA) - Leading SAFe", 
@@ -250,7 +250,7 @@ export const EDUCATION_DATA = {
       id: "v_leanix",
       name: "SAP LeanIX",
       logoUrl: IMAGES.logos.leanix,
-      tags: ["EA Tooling", "SaaS Management"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "SAP"],
       certifications: [
         { 
           name: "LeanIX Certified Practitioner (Level 2)", 
@@ -270,7 +270,7 @@ export const EDUCATION_DATA = {
       id: "v_ardoq",
       name: "Ardoq",
       logoUrl: IMAGES.logos.ardoq,
-      tags: ["EA Tooling", "Data Driven"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven"],
       certifications: [
         { 
           name: "Ardoq Practitioner", 
@@ -284,7 +284,7 @@ export const EDUCATION_DATA = {
       id: "v_snow",
       name: "ServiceNow",
       logoUrl: IMAGES.logos.servicenow,
-      tags: ["ITSM", "Platform"],
+      tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "ServiceNow", "ITSM"],
       certifications: [
         { 
           name: "Enterprise Architecture Implementation Delivery Accreditation", 
