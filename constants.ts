@@ -34,6 +34,7 @@ export const IMAGES = {
     ardoqFund: "https://images.credly.com/images/b7e1d43a-502e-4d5e-9e98-727ca7b0e5fa/image.png",
     leanix1: "https://cc.sj-cdn.net/instructor/26n620binjnso-leanix/course_series/e532arv2dve9/promo-image.1729521839.jpg",
     leanix2: "https://cc.sj-cdn.net/instructor/26n620binjnso-leanix/course_series/a35b0o837ep3/promo-image.1729521851.jpg",
+    leanix3: "https://cc.sj-cdn.net/instructor/26n620binjnso-leanix/courses/1uejnwchn1tkj/promo-image.1729521767.jpg",
     accentureLeader1: "https://images.credly.com/images/d03f2c22-ee38-404a-a19b-cfed053bdfa3/image.png",
     accentureLeader2: "https://images.credly.com/images/e5faf960-966d-4414-8372-6009362d39f6/image.png",
     accentureLeader3: "https://images.credly.com/images/ebf2d86e-33b0-4a49-b06a-e78ace8b27a6/image.png",
@@ -62,6 +63,7 @@ export const LINKS = {
       ardoqFund: "https://www.credly.com/badges/339579ca-08aa-4e35-81aa-9f00b6d9f878/public_url",
       leanix1: "https://verify.skilljar.com/c/x8uvsjxa5ajc",
       leanix2: "https://verify.skilljar.com/c/7nzc9vfuvnmu",
+      leanix3: "https://verify.skilljar.com/c/zdi9kefsr5tx",
       accentureLeader1: "https://www.credly.com/badges/d8d400e0-0660-4c93-9984-c502d100b327/public_url",
       accentureLeader2: "https://www.credly.com/badges/a08927dc-a605-4c25-ba98-889a958ee56a",
       accentureLeader3: "https://www.credly.com/badges/cc5e74d2-1ddb-476e-a4a9-309bde3afe28",
@@ -252,6 +254,12 @@ export const EDUCATION_DATA = {
       logoUrl: IMAGES.logos.leanix,
       tags: ["Digital Transformation", "Strategy", "Enterprise Architecture", "EA Management Tool", "Data-Driven", "Application Portfolio Management", "SAP"],
       certifications: [
+        { 
+          name: "Application Rationalization with LeanIX", 
+          image: IMAGES.badges.leanix3, 
+          date: { ca: "Des. 2025", es: "Dic. 2025", en: "Dec. 2025" }, 
+          credentialUrl: LINKS.credentials.leanix3 
+        },
         { 
           name: "LeanIX Certified Practitioner (Level 2)", 
           image: IMAGES.badges.leanix2, 
